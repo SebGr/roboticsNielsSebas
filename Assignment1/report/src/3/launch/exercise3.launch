@@ -1,0 +1,9 @@
+<launch>
+	<node
+		pkg="rosbag"
+		type="play"
+		name="bagplayer"
+		output="screen"
+		args="--clock -l /home/student/bagfiles/2015-11-16-14-33-30.bag"/>
+	<include file="$(find basics)/launch/camera.launch"></include>
+</launch>

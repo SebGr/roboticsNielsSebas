@@ -1,0 +1,42 @@
+%!TEX root = report.tex
+We added the file with our adjustments to the file \t{alice_description/complete_model.urdf.xarco}, see \cref{lst:2:adding}.
+%
+\lstinputlisting[
+	caption={Adding the file \t{assignment.urdf.xacro.xml} to \t{complete_model.urdf.xacro.xml}}, 
+	label={lst:2:adding}, 
+	language=XML,
+	firstline=14,
+	lastline=15
+]{./src/2/complete_model.urdf.xacro.xml}
+%
+\Cref{lst:2:barLink} presents the link associated with the bar, \t{top_middle_bar} that is placed on top of the \t{middle_bar}. We have assumed that other than its length the bar should have the same dimensions as the \t{middle_bar}, consequently its mass is $\rfrac{0.3}{0.68}$ of the mass of the \t{middle_bar}. The inertia of this bar is the same as that of the \t{middle_bar}. The \t{scale} property of the \t{mesh} element indicates the size the size of the bar. 
+%
+\lstinputlisting[
+	caption={The link of the bar placed on top of the \t{middle_bar}.}, 
+	label={lst:2:barLink}, 
+	language=XML,
+	firstline=14,
+	lastline=33
+]{./src/2/assignment.urdf.xacro.xml}
+%
+The \t{top_middle_bar} is connected with the \t{middle_bar} with the joint \t{middle_bar_to_top_middle_bar}. This joint is fixed, since the these two links cannot move relative to each other. We have given the joint an offset of $\rfrac{0.68}{2} + \rfrac{0.3}{2} + 0.02$. This ensures that the \t{top_middle_bar} is placed on top of the \t{middle_bar} and is exactly \SI{30}{\centi\meter} above the top of the \t{middle_bar}.
+%
+\lstinputlisting[
+	caption={The definition of the joint of the bar in \t{assignment.urdf.xacro.xml}.},
+	label={lst:2:barJoint}, 
+	language=XML,
+	firstline=36,
+	lastline=40
+]{./src/2/assignment.urdf.xacro.xml}
+%
+\lstinputlisting[
+	caption={The definition of the joint \t{middle_xtion_top_middle_bar} in \t{assignment.urdf.xacro.xml}.},
+	label={lst:2:xion}, 
+	language=XML,
+	firstline=118,
+	lastline=122
+]{./src/2/assignment.urdf.xacro.xml}
+%
+The complete code can be found in \cref{sec:a:ass1}. \Cref{lst:2:xion} presents the definition of the joint \t{middle_xtion_top_middle_bar}. The child link \t{middle_xtion_link} is not shown here because it is a copy from the \t{front_xtion_link}. In order to get the correct angle, we tilted the camera $3/4 * \pi$ so that it was facing downwards.\\
+
+Because the camera had to be on top of the bar, we calculated the distance for the joint, that it had to be upwards on the z-axis. Using basic geometry we calculated that the camera would have to be placed $15+2.121$ upwards on the z-axis in order to put it on the top of the bar, with the lowest point still touching the bar.

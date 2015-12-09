@@ -1,0 +1,3 @@
+sensor_msgs/Image rgb
+sensor_msgs/Image grayscale
+int32 numberofpixels

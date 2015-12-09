@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<robot name="alice" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<property name="M_PI" value="3.1415926535897931"/>
+<property name="DEG2RAD" value="0.017453292" />
+
+<gazebo> 
+	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"> 
+		<robotNamespace>/alice</robotNamespace> 
+	</plugin> 
+</gazebo>
+
+<!-- top middle Connection Bar from middle connection bar-->
+<link name="top_middle_bar">
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+	<inertial>
+        <mass value="4.41176"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+	<visual name="visual">
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<geometry>
+    		<mesh filename="package://alice_description/models/box.dae" scale="0.02 0.04 0.3" />
+  		</geometry>
+	</visual>
+	<collision>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+  		<geometry>
+    		<mesh filename="package://alice_description/models/box.dae" scale="0.02 0.04 0.3" />
+  		</geometry>
+	</collision>
+</link>
+
+
+<joint name="middle_bar_to_top_middle_bar" type="fixed"> <!-- Connection between Middle bar and bottom rectangular box -->
+	<origin rpy="0 0 0" xyz="0 0 ${0.68 / 2 + 0.3 / 2 + 0.02}"/>
+	<child link="top_middle_bar"/>
+	<parent link="middle_bar"/>
+</joint>
+
+<gazebo reference="top_middle_bar">
+    <material>Gazebo/Grey</material>
+</gazebo>
+
+
+<!-- Middle Xtion -->
+<link name="middle_xtion_link">
+	<inertial>
+		<mass value="0.200" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<inertia ixx="5.8083e-4" ixy="0" ixz="0" iyy="3.0833e-5" iyz="0" izz="5.9083e-4" />
+	</inertial>
+	<visual>
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<geometry>
+    		<mesh filename="package://alice_description/models/box.dae" scale="0.035 0.18 0.025" />
+  		</geometry>
+	</visual>
+	<collision>
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<geometry>
+    		<mesh filename="package://alice_description/models/box.dae" scale="0.035 0.18 0.025" />
+  		</geometry>
+	</collision>
+</link>
+
+
+<!-- Gazebo color plugin for xtion -->
+<gazebo reference="middle_xtion_link">
+	<selfCollide>false</selfCollide>
+	<static>true</static>
+	<turnGravityOff>false</turnGravityOff>
+	<sensor type="depth" name="middle_xtion">
+		<pose>0 0 0 0 0 0</pose>
+		<always_on>1</always_on>
+		<visualize>true</visualize>
+		<camera>
+			<horizontal_fov>1.047</horizontal_fov>
+			<image>
+				<width>320</width>
+				<height>240</height>
+				<format>R8G8B8</format>
+			</image>
+			<depth_camera></depth_camera>
+			<clip>
+				<near>0.1</near>
+				<far>100</far>
+			</clip>
+		</camera>
+		<plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>30.0</updateRate>
+			<cameraName>front_xtion</cameraName>
+			<frameName>front_rgb_optical_link</frameName>
+			<imageTopicName>rgb/image_raw</imageTopicName>
+			<depthImageTopicName>depth/image_raw</depthImageTopicName>
+			<pointCloudTopicName>depth/points</pointCloudTopicName>
+			<cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+			<depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+			<pointCloudCutoff>0.35</pointCloudCutoff>
+			<pointCloudCutoffMax>4.5</pointCloudCutoffMax>
+			<hackBaseline>0.07</hackBaseline>
+			<distortionK1>0.0</distortionK1>
+			<distortionK2>0.0</distortionK2>
+			<distortionK3>0.0</distortionK3>
+			<distortionT1>0.0</distortionT1>
+			<distortionT2>0.0</distortionT2>
+			<CxPrime>0.0</CxPrime>
+			<Cx>0.0</Cx>
+			<Cy>0.0</Cy>
+			<focalLength>0.0</focalLength>
+		</plugin>
+	</sensor>
+</gazebo>
+
+
+<joint name="middle_xtion_top_middle_bar" type="fixed"> <!-- Connection between top bar and front -->
+	<origin rpy="0 ${M_PI-M_PI/4} 0" xyz="0.0 0.0 ${0.15+0.0222}"/>
+	<child link="middle_xtion_link"/>
+	<parent link="top_middle_bar"/>
+</joint>
+
+
+
+</robot>

@@ -1,0 +1,11 @@
+#goal
+sensor_msgs/Image rgb
+sensor_msgs/Image grayscale
+---
+#result
+int32 numberofpixels
+---
+#feedback
+int32 numberofgrayscalepixels
+
+
