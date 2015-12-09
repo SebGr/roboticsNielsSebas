@@ -1,0 +1,61 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.aux",
+				"*.log",
+				"*.out",
+				"*.synctex.gz",
+				"*.fdb_latexmk",
+				"*.m~"
+			],
+			"follow_symlinks": true,
+			"name": "Code",
+			"path": "./code"
+		},
+		{
+			"file_exclude_patterns":
+			[
+				"*.aux",
+				"*.log",
+				"*.out",
+				"*.synctex.gz",
+				"*.fdb_latexmk",
+				"*.m~",
+				"*-blx.bib",
+				"*.bbl",
+				"*.blg",
+				"*.run.xml"
+			],
+			"folder_exclude_patterns":
+			[
+				"img",
+			],
+			"follow_symlinks": true,
+			"name": "Report",
+			"path": "./report"
+		},
+		{
+			"file_exclude_patterns":
+			[
+				"*.aux",
+				"*.log",
+				"*.out",
+				"*.synctex.gz",
+				"*.fdb_latexmk",
+				"*.m~"
+			],
+			"follow_symlinks": true,
+			"name": "Images",
+			"path": "./report/img"
+		}
+	],
+	"settings":
+	{
+		"FuzzyFilePath":
+		{
+		}
+	}
+}
