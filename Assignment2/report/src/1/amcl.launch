@@ -1,0 +1,27 @@
+<launch>
+	<node 
+			name="alice_teleop_keyboard" 
+			pkg="alice_teleop_keyboard" 
+			type="alice_teleop_keyboard_node" 
+			respawn="true" 
+	/>
+	<node 
+			name="map_saver" 
+			pkg="map_server" 
+			type="map_server" 
+			respawn="true" 
+			args="/home/student/sudo/ros/maps/map.yaml"
+	/>
+	<node
+			name="amcl"
+			pkg="amcl"
+			type="amcl"
+	>
+	<!-- <param name="initial_pose_x" value="5.0"/>
+	<param name="initial_pose_y" value="5.0"/> -->
+	<param name="odom_alpha1" value="1.5"/>
+	<param name="odom_alpha2" value="1.5"/>
+	<param name="odom_alpha3" value="1.5"/>
+	<param name="odom_alpha4" value="1.5"/>
+</node>
+</launch>

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.10.9)  9 DEC 2015 13:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.10.9)  9 DEC 2015 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1390,53 +1390,68 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 \c_siunitx_mathtt_int=\count439
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 16.
-
-Overfull \hbox (6.76984pt too wide) in paragraph at lines 16--16
-[][][][]\OT1/cmr/m/n/10 branchname  
- []
-
-
-Overfull \hbox (6.76984pt too wide) in paragraph at lines 16--16
-[][][][]\OT1/cmr/m/n/10 branchname  
- []
-
-
-Overfull \hbox (6.76984pt too wide) in paragraph at lines 16--16
-[][][][]\OT1/cmr/m/n/10 branchname  
- []
-
-
-Overfull \hbox (6.76984pt too wide) in paragraph at lines 16--16
-[][][][]\OT1/cmr/m/n/10 branchname  
- []
-
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 16.
+
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 17.
+
 Overfull \hbox (29.5pt too wide) in paragraph at lines 17--17
 [] 
  []
 
 (./assignment1.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
- (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+Overfull \hbox (29.5pt too wide) in paragraph at lines 3--3
+[] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 [][][][]\OT1/cmr/m/n/10 Set po-si-tion of robot through code, pos-si-bly: 
  []
 
-) (./assignment2.tex) (./assignment3.tex) (./assignment4.tex)
-(./assignment5.tex [1
+) (./assignment2.tex
+Overfull \hbox (29.5pt too wide) in paragraph at lines 4--4
+[] 
+ []
 
-{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./ass
-ignment6.tex) (./assignment7.tex)
+) (./assignment3.tex
+Overfull \hbox (29.5pt too wide) in paragraph at lines 2--2
+[] 
+ []
+
+) (./assignment4.tex
+Overfull \hbox (29.5pt too wide) in paragraph at lines 4--4
+[] 
+ []
+
+) [1
+
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./assignment5.tex
+Overfull \hbox (29.5pt too wide) in paragraph at lines 3--3
+[] 
+ []
+
+) (./assignment6.tex
+Overfull \hbox (29.5pt too wide) in paragraph at lines 3--3
+[] 
+ []
+
+) (./assignment7.tex
+Overfull \hbox (29.5pt too wide) in paragraph at lines 3--3
+[] 
+ []
+
+)
 
 LaTeX Warning: Empty bibliography on input line 40.
 
@@ -1450,20 +1465,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 46.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 46.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 82A2EE51E288B5BF0B4F0602B5DB137E;130.
+(rerunfilecheck)             Checksum: 9E44D208F3A7C9152BB03F7F65B37B9B;48.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 46.
  ) 
 Here is how much of TeX's memory you used:
- 31855 strings out of 493488
- 612503 string characters out of 3141326
- 873850 words of memory out of 3000000
- 34619 multiletter control sequences out of 15000+200000
+ 31833 strings out of 493488
+ 612055 string characters out of 3141326
+ 872850 words of memory out of 3000000
+ 34589 multiletter control sequences out of 15000+200000
  14531 words of font info for 58 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 70i,9n,78p,937b,1652s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 70i,7n,78p,937b,1652s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
@@ -1471,10 +1486,10 @@ ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texliv
 e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/
 2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
 012/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on report.pdf (3 pages, 69841 bytes).
+Output written on report.pdf (3 pages, 72337 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 80 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
+ 26 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

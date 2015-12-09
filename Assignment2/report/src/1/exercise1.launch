@@ -1,0 +1,12 @@
+<launch>
+	<include file="$(find alice_gazebo)/launch/alice_simulation.launch"></include>
+	<include file="$(find navigation)/launch/amcl.launch"></include>	
+
+	<node
+		name="rviz"
+		pkg="rviz"
+		type="rviz"
+	/>
+
+
+</launch>

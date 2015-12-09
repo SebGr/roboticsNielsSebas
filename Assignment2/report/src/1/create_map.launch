@@ -1,0 +1,30 @@
+<launch>
+	<node 
+			name="alice_teleop_keyboard" 
+			pkg="alice_teleop_keyboard" 
+			type="alice_teleop_keyboard_node" 
+			respawn="true" 
+	/>
+	<node 
+			name="gmapping" 
+			pkg="gmapping" 
+			type="slam_gmapping" 
+			respawn="true" 
+			args="scan:=scan"
+	/>
+	<node 
+			name="gmapping_top"
+			pkg="gmapping" 
+			type="slam_gmapping" 
+			respawn="true" 
+			args="scan:=top_scan"
+	/>	
+	<node 
+			name="map_saver" 
+			pkg="map_server" 
+			type="map_saver" 
+			respawn="true" 
+			args="-f /home/student/sudo/ros/maps/map"
+			respawn_delay="30"
+	/>
+</launch>

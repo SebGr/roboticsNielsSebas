@@ -1,0 +1,78 @@
+<launch>
+	<include file="$(find alice_gazebo)/launch/3_doors.launch"></include>
+
+	<node
+		name="rviz"
+		pkg="rviz"
+		type="rviz"
+		args="-d $(find navigation)/rviz/exercise3.rviz"
+	/>
+
+	<include file="$(find alice_nav_sim)/launch/xtions.launch"></include>
+
+	<!-- Run the map server -->
+	<node name="map_server" pkg="map_server" type="map_server" args="/home/student/sudo/ros/maps/3_doors.yaml"/>
+	
+	<!--- Run AMCL -->
+	<node pkg="amcl" type="amcl" name="amcl">
+		<param name="initial_pose_x" value="5.0"/>
+		<param name="initial_pose_y" value="1.5"/>
+		<param name="initial_pose_a" value="1.57"/>
+		<param name="base_frame_id" value="base_footprint"/>
+		<param name="kld_err" value="0.05"/>
+		<param name="kld_z" value="0.99"/>
+		<param name="gui_publish_rate" value="10.0"/>
+		<param name="recovery_alpha_slow" value="0.001"/>
+		<param name="recovery_alpha_fast" value="0.1"/>
+		<param name="laser_max_beams" value="100"/>
+		<param name="update_min_a" value="0.2" />
+		<param name="odom_alpha1" value="0.3"/>
+		<param name="odom_alpha2" value="0.3"/>
+		<param name="odom_alpha3" value="0.3"/>
+		<param name="odom_alpha4" value="0.3"/>
+	</node>
+
+	<node
+		pkg="head_controller"
+		name="headcontroller"
+		type="headControllerSimulation.py"
+		respawn="true"
+	/>
+
+		<node
+		pkg="alice_nav_sim"
+		name="doors"
+		type="benchmark.py"
+		respawn="true"
+	/>
+
+	<!-- Run move_base -->
+	<node pkg="move_base" type="move_base" respawn="false" name="move_base" clear_params="true" output="screen">
+		<rosparam file="$(find navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+		<rosparam file="$(find navigation)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+		<rosparam file="$(find navigation)/config/local_costmap_params.yaml" command="load" />
+		<rosparam file="$(find navigation)/config/global_costmap_params.yaml" command="load" />
+		<rosparam file="$(find alice_nav_sim)/config/base_local_planner_params.yaml" command="load" />
+		<param name="planner_frequency" value="2" />
+		<param name="controller_frequency" value="10" />
+		<param name="clearing_rotation_allowed" value="false" />
+		<param name="planner_patience" value="3" />
+		<param name="controller_patience" value="10" />
+		<param name="conservative_reset_dist" value="4" />
+		<param name="oscillation_distance" value="0.5" />
+		<param name="shutdown_costmaps" value="true" />
+		<param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+		<param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+	</node>
+
+	<node
+		pkg="navigation"
+		name="goalPublisher"
+		type="navigate3b.py"
+		respawn="true"
+		respawn_delay="20"
+	/>
+
+
+
+</launch>

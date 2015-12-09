@@ -1,0 +1,69 @@
+<!-- 
+launch file has everything from assignment 3 and added gmapping, map saver and a new navigation file called navigation_unknown.
+problem is that it launchesmap in alice_nav.launch so it already knows the map. -->
+
+	<!-- <include file="$(find alice_gazebo)/launch/alice_simulation.launch"></include> -->
+
+
+<launch>
+
+	<node
+		name="rviz"
+		pkg="rviz"
+		type="rviz"
+		args="-d $(find navigation)/rviz/exercise3.rviz"
+	/>
+
+	<include file="$(find alice_nav_sim)/launch/xtions.launch"></include>
+
+	<node
+		pkg="head_controller"
+		name="headcontroller"
+		type="headControllerSimulation.py"
+		respawn="true"
+	/>
+
+	<!-- Run move_base -->
+	<node pkg="move_base" type="move_base" respawn="false" name="move_base" clear_params="true" output="screen">
+		<rosparam file="$(find navigation)/config/costmap_common_params_ex4.yaml" command="load" ns="global_costmap" />
+		<rosparam file="$(find navigation)/config/costmap_common_params_ex4.yaml" command="load" ns="local_costmap" />
+		<rosparam file="$(find navigation)/config/local_costmap_params_ex4.yaml" command="load" />
+		<rosparam file="$(find navigation)/config/global_costmap_params_ex4.yaml" command="load" />
+		<rosparam file="$(find alice_nav_sim)/config/base_local_planner_params.yaml" command="load" />
+		<param name="planner_frequency" value="2" />
+		<param name="controller_frequency" value="10" />
+		<param name="clearing_rotation_allowed" value="false" />
+		<param name="planner_patience" value="3" />
+		<param name="controller_patience" value="10" />
+		<param name="conservative_reset_dist" value="4" />
+		<param name="oscillation_distance" value="0.5" />
+		<param name="shutdown_costmaps" value="true" />
+		<param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+		<param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+	</node>
+
+	<node 
+			name="gmapping"
+			pkg="gmapping" 
+			type="slam_gmapping" 
+			respawn="true" 
+			args="scan:=scan"
+	/>	
+
+<!-- 	<node
+		pkg="navigation"
+		name="goalExecutioner"
+		type="goal_executioner2.py"
+		respawn="true"
+		respawn_delay="5"
+	/> -->
+
+	<node 
+		name="map_saver" 
+		pkg="map_server" 
+		type="map_saver" 
+		respawn="true" 
+		args="-f /home/student/sudo/ros/maps/new_map"
+	/>
+
+</launch>

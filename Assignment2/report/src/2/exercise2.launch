@@ -1,0 +1,14 @@
+<launch>
+	<include file="$(find alice_gazebo)/launch/alice_simulation.launch"></include>
+
+	<node
+		name="rviz"
+		pkg="rviz"
+		type="rviz"
+		args="-d $(find navigation)/rviz/exercise2.rviz"
+	/>
+
+	<include file="$(find navigation)/launch/alice_nav.launch"></include>	
+
+
+</launch>

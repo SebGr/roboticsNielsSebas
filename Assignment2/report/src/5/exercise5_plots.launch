@@ -1,0 +1,19 @@
+	<launch>
+	<node
+		pkg="rqt_plot"
+		name="linear_vel_plot"
+		type="rqt_plot"
+		args="/cmd_vel/linear/x /odom/twist/twist/linear/x"
+		respawn="true"
+		respawn_delay="20"
+	/>
+
+	<node
+		pkg="rqt_plot"
+		name="angular_vel_plot"
+		type="rqt_plot"
+		args="/cmd_vel/angular/z /odom/twist/twist/angular/z"
+		respawn="true"
+		respawn_delay="20"
+	/>
+	</launch>
