@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.10.9)  9 DEC 2015 14:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.10.9)  13 DEC 2015 21:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1419,24 +1419,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
  []
 
 
-Overfull \hbox (29.5pt too wide) in paragraph at lines 25--25
+Overfull \hbox (29.5pt too wide) in paragraph at lines 26--26
 [] 
  []
 
 
-Overfull \hbox (29.5pt too wide) in paragraph at lines 29--29
+Overfull \hbox (29.5pt too wide) in paragraph at lines 36--36
 [] 
  []
 
 (./src/1/amcl.launch) [1
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (29.5pt too wide) in paragraph at lines 47--47
+Overfull \hbox (29.5pt too wide) in paragraph at lines 54--54
 [] 
  []
 
 
-Overfull \hbox (29.5pt too wide) in paragraph at lines 48--48
+Overfull \hbox (29.5pt too wide) in paragraph at lines 55--55
+[] 
+ []
+
+
+Overfull \hbox (29.5pt too wide) in paragraph at lines 56--56
 [] 
  []
 
@@ -1450,12 +1455,22 @@ Overfull \hbox (29.5pt too wide) in paragraph at lines 2--2
 [] 
  []
 
+[3]
+Overfull \hbox (29.5pt too wide) in paragraph at lines 12--12
+[] 
+ []
+
+
+Overfull \hbox (29.5pt too wide) in paragraph at lines 13--13
+[] 
+ []
+
 ) (./assignment4.tex
 Overfull \hbox (29.5pt too wide) in paragraph at lines 4--4
 [] 
  []
 
-) [3] (./assignment5.tex
+) (./assignment5.tex
 Overfull \hbox (29.5pt too wide) in paragraph at lines 3--3
 [] 
  []
@@ -1491,10 +1506,10 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 46.
  ) 
 Here is how much of TeX's memory you used:
- 31946 strings out of 493488
- 613613 string characters out of 3141326
- 1030850 words of memory out of 3000000
- 34621 multiletter control sequences out of 15000+200000
+ 31961 strings out of 493488
+ 613847 string characters out of 3141326
+ 1031850 words of memory out of 3000000
+ 34629 multiletter control sequences out of 15000+200000
  14839 words of font info for 59 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  70i,7n,78p,937b,1655s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1506,10 +1521,10 @@ ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive
 /2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2
 012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
 12/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on report.pdf (5 pages, 93103 bytes).
+Output written on report.pdf (5 pages, 95440 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
- 98 named destinations out of 1000 (max. 500000)
+ 186 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 105 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
