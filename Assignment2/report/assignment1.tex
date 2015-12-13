@@ -19,10 +19,16 @@ In order to get a map, the following commands have to be used in different termi
 
 \begin{itemize}
 	\item \todo[inline]{De transforms gebeuren automagisch op basis van URDF, noem welke het zijn. zie GMapping wiki.}
-	\item \todo[inline]{Set position of robot through code, possibly: http://wiki.ros.org/navigation/Tutorials/RobotSetup/Odom}
 \end{itemize}
 
-\todo[inline]{get the new map from /ros/maps}
+
+\todo[inline]{make a new map without the long lines}
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\textwidth]{./img/map.pgm}
+% 	\caption{The map that was made through mapping with teleop keyboard package.}
+% 	\label{fig:1:map}
+% \end{figure}
 
 \subsection*{1.b}
 
@@ -44,5 +50,6 @@ This gave a 2D map in Rviz, with an amcl representation of the robot in gazebo, 
 	float
 ]{./src/1/amcl.launch}
 
+\todo[inline]{add code to change location through python}
 \todo[inline]{change speeds on robot}
 \todo[inline]{show difference gazebo/rviz}
