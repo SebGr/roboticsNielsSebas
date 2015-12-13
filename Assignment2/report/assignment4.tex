@@ -1,8 +1,14 @@
 %!TEX root = report.tex
 
+\todo[inline]{ADD THAT IT GRABS THE CLOSEST POINT}
 
  \todo[inline]{How do you run this?!}
 
 One of the general struggles we found in this assignment was the issue that the robot its footprint, which was set in assignment 2, was found to be too small. This meant that the robot saw some part behind itself as a possible obstruction. This generated the problem that the robot would drive into a corner and get stuck, because it would have a wall at two sides and a non-existing obstacle behind him. We solved this by enlarging the footprint and radius until it would no longer see the obstruction.
 
-This caused it to find a few issues
+The exploration was done as follows: First the robot checked its surroundings for possible goals to drive to, which was done by finding all the unknown points(value -1 in the metadata map) which were adjacent to a clear(value zero in the metadata map) space. This are added in a list, after which the robot goes through the possible data points using the \t{make_plan} service.
+
+The \t{make_plan} service was used in combination with a try/catch exception, to try and select a potential goal to drive to which was reachable. This was done to try and reduce the possibility of the robot selecting a goal which was too close to the wall, which would mean it would take a lot of time trying out different paths to reach the point.
+
+\todo[inline]{show the map}
+\todo[inline]{add the code}
