@@ -1,4 +1,70 @@
 %!TEX root = report.tex
 
+For this exercise we created a launch file, which launches the Alice simulation, the visualisation of the situation in Rviz and the navigation stack, which is defined by a second launch file.
 
- \todo[inline]{How do you run this?!}
+\lstinputlisting[
+	caption={The launch file for the entire exercise \t{exercise2.launch}.},
+	label={lst:2:exercise}, 
+	language=XML
+]{./src/2/exercise2.launch}
+
+This file can launched using the following command
+
+\begin{lstlisting}
+	roslaunch navigation exercise2.launch
+\end{lstlisting}
+
+The launch file that defines the navigation file and the parameter files that it includes can be found in \cref{sec:a:ass2}, the interesting parts of these are explained below:
+
+The first parameter we set is the \emph{controller\_frequency} this is the frequency (in Hertz) at which velocity commands are sent to the robot base, this is 10 Hz for our navigation stack:
+
+\lstinputlisting[
+	caption={The controller frequency},
+	label={lst:2:c_freq}, 
+	language=XML,
+	firstline=37,
+	lastline=37
+]{./src/2/alice_nav.launch}
+
+Before moving to a location, \emph{move\_base} has to find a path to this location, but sometimes a path cannot be found, the \emph{planner\_patience} parameter tells how many seconds \emph{move\_base} should keep trying to find a path to a certain location, before moving on. In our case this is 3 seconds:
+
+\lstinputlisting[
+	caption={The planner patience},
+	label={lst:2:p_pat}, 
+	language=XML,
+	firstline=39,
+	lastline=39
+]{./src/2/alice_nav.launch}
+
+Furthermore, once a plan has been made, velocities have to be determined for the robot to move. This can fail too. The \emph{controller\_patience} determines how many seconds \emph{move\_base} should wait for velocity controls, before failing. For this parameter we use 10 seconds.
+
+\lstinputlisting[
+	caption={The controller patience},
+	label={lst:2:c_pat}, 
+	language=XML,
+	firstline=40,
+	lastline=40
+]{./src/2/alice_nav.launch}
+
+If the robot has to wait longer than set in the patience parameter, it is stuck. At this point it will start doing its recovery behaviours. The \emph{clearing\_rotation\_allowed} parameter tells if the robot is allowed to rotate on spot if this happens. In our stack the robot is not:
+
+\lstinputlisting[
+	caption={Rotating on spot recovery is not allowed},
+	label={lst:2:rotate}, 
+	language=XML,
+	firstline=38,
+	lastline=38
+]{./src/2/alice_nav.launch}
+
+Another recovery behaviour is clearing the robots costmaps, the costmap of a robot determine where the robot can safely move. Costmaps are constantly updated and can thus cause a robot to get stuck. In our case the robot is allowed to clear costmaps as a recovery behaviour, set with the \emph{shutdown\_costmaps} parameter:
+
+\lstinputlisting[
+	caption={Clearing costmaps recovery is not allowed},
+	label={lst:2:clear}, 
+	language=XML,
+	firstline=43,
+	lastline=43
+]{./src/2/alice_nav.launch}
+
+The calculation of a path, as mentioned above, is done by a module called the global planner. The global planner uses shortest path algorithms like Dijkstra and A* to find a path through its costmap with the lowest possible cost. Once a path is calculated, a local planner with repeatedly try to determine what to do to follow this plan. It will simulate trajectories for many different velocities and then chooses the velocities that will get the robot to its destination the fastest, without hitting obstacles or moving too far away from the plan. The default planners used in ROS are the Navfn global planner and the Trajectory Rollout local planner, which simulates over a larger period than the other common choice: Dynamic Window Approach. This might result in a slightly better performance. The navigation stack in this exercise uses these default planners, so parameters for this need not be set. Other planners could however be chosen using the \emph{base\_global\_planner} and \emph{base\_local\_planner parameters}.
+ 
