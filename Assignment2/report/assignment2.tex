@@ -16,7 +16,7 @@ This file can launched using the following command
 
 The launch file that defines the navigation file and the parameter files that it includes can be found in \cref{sec:a:ass2}, the interesting parts of these are explained below:
 
-The first parameter we set is the \emph{controller\_frequency} this is the frequency (in Hertz) at which velocity commands are sent to the robot base, this is 10 Hz for our navigation stack:
+The first parameter we set is the \t{controller\_frequency} this is the frequency (in Hertz) at which velocity commands are sent to the robot base, this is 10 Hz for our navigation stack:
 
 \lstinputlisting[
 	caption={The controller frequency},
@@ -26,7 +26,7 @@ The first parameter we set is the \emph{controller\_frequency} this is the frequ
 	lastline=37
 ]{./src/2/alice_nav.launch}
 
-Before moving to a location, \emph{move\_base} has to find a path to this location, but sometimes a path cannot be found, the \emph{planner\_patience} parameter tells how many seconds \emph{move\_base} should keep trying to find a path to a certain location, before moving on. In our case this is 3 seconds:
+Before moving to a location, \t{move\_base} has to find a path to this location, but sometimes a path cannot be found, the \t{planner\_patience} parameter tells how many seconds \t{move\_base} should keep trying to find a path to a certain location, before moving on. In our case this is 3 seconds:
 
 \lstinputlisting[
 	caption={The planner patience},
@@ -36,7 +36,7 @@ Before moving to a location, \emph{move\_base} has to find a path to this locati
 	lastline=39
 ]{./src/2/alice_nav.launch}
 
-Furthermore, once a plan has been made, velocities have to be determined for the robot to move. This can fail too. The \emph{controller\_patience} determines how many seconds \emph{move\_base} should wait for velocity controls, before failing. For this parameter we use 10 seconds.
+Furthermore, once a plan has been made, velocities have to be determined for the robot to move. This can fail too. The \t{controller\_patience} determines how many seconds \t{move\_base} should wait for velocity controls, before failing. For this parameter we use 10 seconds.
 
 \lstinputlisting[
 	caption={The controller patience},
@@ -46,7 +46,7 @@ Furthermore, once a plan has been made, velocities have to be determined for the
 	lastline=40
 ]{./src/2/alice_nav.launch}
 
-If the robot has to wait longer than set in the patience parameter, it is stuck. At this point it will start doing its recovery behaviours. The \emph{clearing\_rotation\_allowed} parameter tells if the robot is allowed to rotate on spot if this happens. In our stack the robot is not:
+If the robot has to wait longer than set in the patience parameter, it is stuck. At this point it will start doing its recovery behaviours. The \t{clearing\_rotation\_allowed} parameter tells if the robot is allowed to rotate on spot if this happens. In our stack the robot is not:
 
 \lstinputlisting[
 	caption={Rotating on spot recovery is not allowed},
@@ -56,15 +56,95 @@ If the robot has to wait longer than set in the patience parameter, it is stuck.
 	lastline=38
 ]{./src/2/alice_nav.launch}
 
-Another recovery behaviour is clearing the robots costmaps, the costmap of a robot determine where the robot can safely move. Costmaps are constantly updated and can thus cause a robot to get stuck. In our case the robot is allowed to clear costmaps as a recovery behaviour, set with the \emph{shutdown\_costmaps} parameter:
+Another recovery behaviour is clearing the robots costmaps, the costmap of a robot determines where the robot can safely move. Costmaps are constantly updated and can thus cause a robot to get stuck. In our case the robot is allowed to clear costmaps as a recovery behaviour. The recovery behaviours that a robot does use, are defined by the \t{recovery\_behaviors} parameter. This parameter can be set directly from the launch file, like the parameters before, or from yaml files containing more specific parameters for certain parts of the navigation stack, we set the \t{recovery\_parameters} parameter from the \t{costmap_common_params.yaml} file specifying the parameters that are common among our local and global planners:
 
 \lstinputlisting[
-	caption={Clearing costmaps recovery is not allowed},
+	caption={Use clearing costmaps as recovery behaviour},
 	label={lst:2:clear}, 
+	language=XML,
+	firstline=5,
+	lastline=8
+]{./src/2/costmap_common_params.yaml}
+
+The files yaml files containing the specific parameters are included from the navigation stack launch file:
+
+\lstinputlisting[
+	caption={Include YAML files containing more parameters},
+	label={lst:2:yaml}, 
+	language=XML,
+	firstline=25,
+	lastline=35
+]{./src/2/alice_nav.launch}
+
+The calculation of a path, as mentioned above, is done by a module called the global planner. The global planner uses shortest path algorithms like Dijkstra and A* to find a path through its costmap with the lowest possible cost. Once a path is calculated, a local planner with repeatedly try to determine what to do to follow this plan. It will simulate trajectories for many different velocities and then chooses the velocities that will get the robot to its destination the fastest, without hitting obstacles or moving too far away from the plan. The default planners used in ROS are the Navfn global planner and the Trajectory Rollout local planner, which simulates over a larger period than the other common choice: Dynamic Window Approach. This might result in a slightly better performance. The navigation stack in this exercise uses these default planners, so parameters for this need not be set. Other planners could however be chosen using the \t{base\_global\_planner} and \t{base\_local\_planner} parameters.
+
+The costmaps that the planners use, are updated while the robot is moving. It is possible to shut this down when the robot is in an inactive. By default the costmaps are not shut down, but we enabled it by adding the following parameter:
+
+\lstinputlisting[
+	caption={Shutdown costmaps in an inactive state},
+	label={lst:2:shutdown}, 
 	language=XML,
 	firstline=43,
 	lastline=43
 ]{./src/2/alice_nav.launch}
 
-The calculation of a path, as mentioned above, is done by a module called the global planner. The global planner uses shortest path algorithms like Dijkstra and A* to find a path through its costmap with the lowest possible cost. Once a path is calculated, a local planner with repeatedly try to determine what to do to follow this plan. It will simulate trajectories for many different velocities and then chooses the velocities that will get the robot to its destination the fastest, without hitting obstacles or moving too far away from the plan. The default planners used in ROS are the Navfn global planner and the Trajectory Rollout local planner, which simulates over a larger period than the other common choice: Dynamic Window Approach. This might result in a slightly better performance. The navigation stack in this exercise uses these default planners, so parameters for this need not be set. Other planners could however be chosen using the \emph{base\_global\_planner} and \emph{base\_local\_planner parameters}.
- 
+Costmaps are used to check how big the risk of collision is when planning, to do this a footprint of the robot is needed to see which parts of the costmaps it covers at each moment. This footprint needs to be convex to be able to do the right calculations. Each of the planners uses an own costmap. For the global planner we used a footprint that is circular, defined by setting a \t{robot\_radius} in our \t{global_costmap_params.yaml}  file.
+
+\lstinputlisting[
+	caption={Global footprint},
+	label={lst:2:global_footprint}, 
+	language=XML,
+	firstline=4,
+	lastline=4
+]{./src/2/global_costmap_params.yaml}
+
+For the local planner we used a rectangular footprint, representing the rectangular base of the robot itself. It is set by the \t{footprint} parameter in \t{local_costmap_params.yaml}:
+
+\lstinputlisting[
+	caption={Local footprint},
+	label={lst:2:local_footprint}, 
+	language=XML,
+	firstline=14,
+	lastline=15
+]{./src/2/local_costmap_params.yaml}
+
+Higher costs in costmaps are caused by proximity to objects, how close the robot needs to be for costs to go up is set by \t{inflation_radius} parameter, these can be different between the two planners, we set inflation radius for the local costmap 10 centimetres higher than that of the global costmap:
+
+\lstinputlisting[
+	caption={Global inflation radius},
+	label={lst:2:global_inflation}, 
+	language=XML,
+	firstline=19,
+	lastline=19
+]{./src/2/global_costmap_params.yaml}
+
+\lstinputlisting[
+	caption={Local inflation radius},
+	label={lst:2:local_inflation}, 
+	language=XML,
+	firstline=23,
+	lastline=23
+]{./src/2/local_costmap_params.yaml}
+
+To build a costmap we need sensors to detect obstacles, for this Alice uses Xtions and lasers. These have to be set in the parameters, we set this in the file \t{costmap_common_params.yaml} that defines parameters shared between the global and local costmaps:
+
+\lstinputlisting[
+	caption={Defining sensors},
+	label={lst:2:sensor_def}, 
+	language=XML,
+	firstline=10,
+	lastline=17
+]{./src/2/costmap_common_params.yaml}
+
+These sensors then have to be enabled in the planners, these lines can be found in both the global costmap parameters and the local costmap parameters.
+
+\lstinputlisting[
+	caption={Enabling sensors},
+	label={lst:2:sensor_enable}, 
+	language=XML,
+	firstline=25,
+	lastline=33
+]{./src/2/local_costmap_params.yaml}
+
+The only difference between the local and the global parameters here is the \t{combination_method} parameter. This set for the local costmap to be 0, meaning that the Xtions have a higher priority than the lasers (1) in the local planner. This is not present in the global parameters.
+
