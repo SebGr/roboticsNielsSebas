@@ -1,3 +1,43 @@
 %!TEX root = report.tex
 
- \todo[inline]{How do you run this?!}
+For this exercise we created a new launch file \t{exercise5.launch}. In which we launch the scene with the closing doors from assignment 3b and all the other components that were used in this exercise, but with a separate set of parameters. The most important difference with the parameters in assignment 3b are the following lines:
+
+\lstinputlisting[
+	caption={Enabling topics},
+	label={lst:5:topics}, 
+	language=XML,
+	firstline=43,
+	lastline=44
+]{./src/5/base_local_planner_params_ex5.yaml}
+
+These parameters enable some topics that visualize the costmap and the trajectory analysis that the local planner does.
+The experiments for this assignment can be launched with the following command:
+
+\begin{lstlisting}
+	roslaunch navigation exercise5.launch
+\end{lstlisting}
+
+After launching the experiments we also launched the tool \t{rqt_graph} which we used to visualize the velocities of the robot and the velocity that was sent to the robot through commands:
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.80\textwidth]{./img/graph}
+	\caption{Visualization of the linear command velocity \t{cmd_vel/linear/x} and the actual linear velocity \t{odom/twist/twist/linear/x} at a certain point in the simulation.}
+	\label{fig:5:graph}
+\end{figure}
+
+From these graphs it became clear the it takes some time for the command to be executed by the robot as there is a slight delay between changes in the command velocity curve and the actual velocity curve.
+
+We used this tool together with the new topics for visualization to analyse the effect of certain parameters for the local planner:
+
+First we looked at the effects that the changes in the parameters for the angular and linear acceleration limits had on the behaviour of the robot. Slight changes in the angular limit parameter, \t{acc_lim_theta} had an effect on the range of angles that the local planner could simulate, see \cref{fig:5:acc_lim_theta}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.46\textwidth]{./img/smallangularA}
+	\includegraphics[width=0.46\textwidth]{./img/highangularA}
+	\caption{The effect of varying the angular acceleration limit from low (left) to high(right) on the local planner.}
+	\label{fig:5:acc_lim_theta}
+\end{figure}
+
+The images show that for a higher angular acceleration limit, the range possible local trajectories that are simulated by the planner is much wider that for a lower limit. The effect of this in the simulation was that for lower limits the robot wasn´t able to make sharp turns, but for a higher limit, the robot tended to make turns that were so sharp that the robot practically turned around an remained in almost the same position. We saw the robot make the most effective turns for an angular acceleration limit of 1.2.
