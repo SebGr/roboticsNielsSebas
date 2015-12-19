@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex version 1.7 $
+% $ biblatex version 2.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -15,6 +15,13 @@
       \aftergroup\endinput}
   {}
 \endgroup
+
+\entry{ROSorg}{misc}{}
+  \field{sortinit}{D}
+  \field{howpublished}{\url{http://wiki.ros.org/dwa_local_planner}}
+  \field{note}{Accessed: 2015-12-09}
+  \field{title}{dwa\_local\_planner}
+\endentry
 
 \lossort
 \endlossort
