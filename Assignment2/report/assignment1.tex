@@ -39,14 +39,14 @@ For this assignment, the map from the first part had to be reused in Rviz, toget
 This gave a 2D map in Rviz, as well as the 3D model in gazebo. In order to try and break the representations of the robot between Rviz and Gazebo, a lot of noise was introduced. Using this meant there was more uncertainty about the location, and so the rviz robot was at a different point than the gazebo robot after a while.
 
 \lstinputlisting[
-	caption={The launch file to map the room.},
+	caption={Teleop with the saved map.},
 	label={lst:2:teleopAmcl}, 
 	language=Python,
 	float
 ]{./src/1/amcl.launch}
 
 \lstinputlisting[
-	caption={The launch file to map the room.},
+	caption={Set the estimate position.},
 	label={lst:3:initPose}, 
 	language=Python,
 	float

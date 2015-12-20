@@ -74,14 +74,14 @@ Other important simulation parameters are \t{sim_time} and \t{sim_granularity}. 
 	\label{fig:5:sim}
 \end{figure}
 
-Finally the are some parameters that have an influence on the score of each simulated trajectory. The main parameters for this are \t{goal_distance_bias}, \t{path_distance_bias} and \t{occdist_scale}. The score of a trajectory is calculated as follows \cite{ROSorg}.
+Finally the are some parameters that have an influence on the score of each simulated trajectory. The main parameters for this are \t{goal_distance_bias}, \t{path_distance_bias} and \t{occdist_scale}. The score of a trajectory is calculated as follows \cite{ROSorg}:
 
 \begin{quote}
 \begin{lstlisting}[language = XML]
 	cost =
   path_distance_bias * (distance to path from the endpoint of the trajectory in meters)
   + goal_distance_bias * (distance to local goal from the endpoint of the trajectory in meters)
-  + occdist_scale * (maximum obstacle cost along the trajectory in obstacle cost (0-254))roslaunch navigation exercise5.launch
+  + occdist_scale * (maximum obstacle cost along the trajectory in obstacle cost (0-254))
 \end{lstlisting}
 \end{quote}
 
