@@ -1,5 +1,4 @@
 %!TEX root = report.tex
- \todo[inline]{How do you run this?!}
 
 \begin{lstlisting}
 	roslaunch alice_gazebo alice_simulation.launch	
@@ -22,13 +21,19 @@ We wanted to fix this by sorting the potential goals by distance in a stack, and
 The actual code is a lot the same as with assignment 3, the main difference is the way the goal is created and selected.
 
 \lstinputlisting[
-	caption={The spin function},
-	label={lst:2:spin}, 
+	caption={The main function},
+	label={lst:4:main}, 
 	language=Python,
-	firstline=44,
-	lastline=59
-]{./src/3/navigate.py}
+	firstline=67,
+	lastline=94
+]{./src/4/goal_executioner2.py}
 
-The program firstly
 
-\todo[inline]{add the code}
+
+\lstinputlisting[
+	caption={The goal creation functions},
+	label={lst:4:goals}, 
+	language=Python,
+	firstline=36,
+	lastline=57
+]{./src/4/goal_executioner2.py}
