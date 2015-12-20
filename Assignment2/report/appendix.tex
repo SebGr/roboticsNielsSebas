@@ -2,7 +2,7 @@
 \section*{Assignment 1}
 \label{sec:a:ass1}
 \lstinputlisting[
-	caption={Main launch file for exercise 1, launches AMCL and the simulation \t{./src/1/launch/exercise1.launch}.},
+	caption={Main launch file for exercise 1, launches amcl.launch and the simulation \t{./src/1/launch/exercise1.launch}.},
 	label={lst:1:launch}, 
 	language=XML,
 ]{./src/1/exercise1.launch}
@@ -13,6 +13,18 @@
 	language=XML,
 ]{./src/1/create_map.launch}
 
+\lstinputlisting[
+	caption={The launch file that launches amcl, teleoperation and a map server \t{./src/1/launch/amcl.launch}.},
+	label={lst:1:amcl}, 
+	language=XML,
+]{./src/1/amcl.launch}
+
+\lstinputlisting[
+	caption={The python script that sets the estimated position of the robot \t{./src/1/scripts/initPose.py}.},
+	label={lst:1:pose}, 
+	language=python,
+]{./src/1/initPose.py}
+
 \section*{Assignment 2}
 \label{sec:a:ass2}
 \lstinputlisting[
@@ -20,6 +32,24 @@
 	label={lst:2:launch}, 
 	language=XML,
 ]{./src/2/exercise2.launch}
+
+\lstinputlisting[
+	caption={Common costmap parameters \t{./src/2/config/costmap_common_params.yaml}.},
+	label={lst:2:common}, 
+	language=XML,
+]{./src/2/costmap_common_params.yaml}
+
+\lstinputlisting[
+	caption={Global costmap parameters \t{./src/2/config/global_costmap_params.yaml}.},
+	label={lst:2:global}, 
+	language=XML,
+]{./src/2/global_costmap_params.yaml}
+
+\lstinputlisting[
+	caption={Local costmap parameters \t{./src/2/config/local_costmap_params.yaml}.},
+	label={lst:2:local}, 
+	language=XML,
+]{./src/2/local_costmap_params.yaml}
 
 \section*{Assignment 3}
 \label{sec:a:ass3a}
@@ -29,12 +59,24 @@
 	language=XML,
 ]{./src/3/exercise3.launch}
 
+\lstinputlisting[
+	caption={The python script that feeds the goals to the robot for 3a \t{./src/3/scripts/navigate.py}.},
+	label={lst:3:navigate}, 
+	language=python,
+]{./src/3/navigate.py}
+
 \label{sec:a:ass3b}
 \lstinputlisting[
 	caption={Main launch file for exercise 3, launches AMCL, the simulation as well as the navigation node \t{./src/3/launch/exercise3b.launch}.},
 	label={lst:3b:launch}, 
 	language=XML,
 ]{./src/3/exercise3b.launch}
+
+\lstinputlisting[
+	caption={The python script that feeds the goals to the robot for 3b \t{./src/3/scripts/navigate3b.py}.},
+	label={lst:3:navigate3b}, 
+	language=python,
+]{./src/3/navigate3b.py}
 
 \section*{Assignment 4}
 \label{sec:a:ass4}
@@ -44,6 +86,30 @@
 	language=XML,
 ]{./src/4/exercise4.launch}
 
+\lstinputlisting[
+	caption={The python script that determines which unknown spots to visit \t{./src/4/scripts/goal_executioner2.py}.},
+	label={lst:4:goalexec}, 
+	language=python,
+]{./src/4/goal_executioner2.py}
+
+\lstinputlisting[
+	caption={Common costmap parameters \t{./src/4/config/costmap_common_params_ex4.yaml}.},
+	label={lst:4:common}, 
+	language=XML,
+]{./src/4/costmap_common_params_ex4.yaml}
+
+\lstinputlisting[
+	caption={Global costmap parameters \t{./src/4/config/global_costmap_params_ex4.yaml}.},
+	label={lst:4:global}, 
+	language=XML,
+]{./src/4/global_costmap_params_ex4.yaml}
+
+\lstinputlisting[
+	caption={Local costmap parameters \t{./src/4/config/local_costmap_params_ex4.yaml}.},
+	label={lst:4:local}, 
+	language=XML,
+]{./src/4/local_costmap_params_ex4.yaml}
+
 \section*{Assignment 5}
 \label{sec:a:ass5}
 \lstinputlisting[
@@ -52,7 +118,19 @@
 	language=XML,
 ]{./src/5/exercise5.launch}
 
+\lstinputlisting[
+	caption={The parameters for the local planner \t{./src/5/config/base_local_planner_params_ex5.yaml}.},
+	label={lst:5:planner}, 
+	language=XML,
+]{./src/5/base_local_planner_params_ex5.yaml}
+
 \section*{Assignment 6}
+\lstinputlisting[
+	caption={Prints something \t{./src/6/scripts/print_something.py}.},
+	label={lst:6:print}, 
+	language=python,
+]{./src/6/print_something.py}
+
 
 \section*{Assignment 7}
 \label{sec:a:ass7}
