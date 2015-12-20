@@ -85,7 +85,7 @@ def subscriber_callback(data):
 		plan = planMaker(
 			start_pose,
 			goal_robot.target_pose,
-			0.15)
+			0.5)
 		action_server = actionlib.SimpleActionClient('move_base', mb_msg.MoveBaseAction);
 		action_server.wait_for_server()
 		send_goal(goal_robot, action_server)

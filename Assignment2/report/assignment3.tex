@@ -5,7 +5,7 @@
 	roslaunch navigation exercise3.launch
 \end{lstlisting}
 
-The interesting part here is the \t{navigate.py} file, which takes the static points and sends them to the \t{move_base}, in order to succesfully travel to them. The program first starts by giving errors and timeouts, this is due to RViz requesting information from topics which haven't been initiated yet by Gazebo. To try and reduce this, we have added a delay in initialisation.
+The interesting part here is the \t{navigate.py} file, which takes the static points and sends them to the \t{move_base}, in order to succesfully travel to them. The program starts by giving errors and timeouts when starting up, this is due to RViz and the navigate node requesting information from topics which haven't been initiated yet by Gazebo. To try and reduce this, we have added a delay in initialisation for navigation.
 
 As can be seen in \t{navigate.py}, the navigate class has 4 functions. The file firstly obtains the goals that it has to reach from the location file. These are stored in \t{way_points}.
 
@@ -32,7 +32,7 @@ If there still are waypoints, a waypoint is popped and sent to the function \t{c
 	lastline=37
 ]{./src/3/navigate.py}
 
-The goal message is created in listing \ref{lst:3:createGoal}, where the angle is also converted from an angle to quaternions. Afterwards the goal message is sent to the action server and the functions waits until it receives a response. 
+The goal message is created in listing \ref{lst:3:createGoal}, where the angle is also converted from an angle to quaternions. Afterwards the goal message is sent to the action server and the node then waits until it receives a response. 
 
 \lstinputlisting[
 	caption={The \t{sent_goal} function},
@@ -44,7 +44,7 @@ The goal message is created in listing \ref{lst:3:createGoal}, where the angle i
 
 In listing \ref{lst:4:sentGoal}, the goal is simply sent and the node then waits for a response, which it then prints.
 
-The robot was able to reach all the locations, but occasionally had some difficulties by going to close by corners. 
+The robot was able to reach all the locations, but occasionally had some difficulties in its navigation by going too close around corners. 
 
 \subsection*{3.b}
 \begin{lstlisting}
@@ -55,6 +55,6 @@ For this exercise the robot had to drive to 3 locations, but in a different map.
 
 The code can be seen in \t{navigate3b.py}, but it is so similar to exercise 3a that I will leave it for the appendix. The main difference is that the robot uses a different map and locations goals to drive to.
 
-This generally went fine, the only issue we could have was that the robot had driven around the table and was almost at the door, which would close in front of him. It would then become too difficult for him to drive around the table to a different door and then it would get stuck.
+This generally went fine, the only issue we could have was that the robot had driven around the table and was almost at the door, which would then close in front of him. This meant the robot had to find a new route, which was around the table and into another door. The robot however could get too close to the table and then get stuck.
 
 Occasionally the robot also drove through the door if it closed too late, causing the door to dissapear.
