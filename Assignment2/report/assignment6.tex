@@ -1,6 +1,15 @@
 %!TEX root = report.tex
 
- \todo[inline]{How do you run this?!}
- \todo[inline]{er moet nog een gedrag geprint worden!}
+\begin{lstlisting}
+	roslaunch alice_gazebo alice_simulation.launch	
+	roslaunch navigation exercise4.launch
+	rosrun navigation print_something.py
+\end{lstlisting}
 
-The same robot model was used as in assignment 4, with the exception that a subscriber node listens to whether the goal was reached and when it is reached, that it then does a behavior.
+The same robot model was used as in assignment 4, with the exception that a subscriber node listens to whether the goal was reached and when it is reached, that it then prints whether the goal is reached or not. If the goal has failed to have been reached for 3 times, then the goal gets cancelled, as seen in \cref{lst:1:sub}.
+
+\lstinputlisting[
+	caption={The subscriber node},
+	label={lst:1:sub}, 
+	language=Python,
+]{./src/6/print_something.py}
