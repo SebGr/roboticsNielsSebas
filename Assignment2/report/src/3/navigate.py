@@ -32,8 +32,8 @@ class Navigator(object):
 
 		goal.target_pose.header.frame_id = 'map'
 		goal.target_pose.header.stamp = rospy.Time.now()
-		print way_point
-		print goal
+		# print way_point
+		# print goal
 		return goal
 
 	def send_goal(self, goal):

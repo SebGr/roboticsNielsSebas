@@ -1,20 +1,60 @@
 %!TEX root = report.tex
- \todo[inline]{How do you run this?!}
-
 
 \subsection*{3.a}
 \begin{lstlisting}
 	roslaunch navigation exercise3.launch
 \end{lstlisting}
 
-The interesting part here is the \t{navigate.py} file, which takes the static points and sends them to the \t{move_base}, in order to succesfully travel to them.
+The interesting part here is the \t{navigate.py} file, which takes the static points and sends them to the \t{move_base}, in order to succesfully travel to them. The program first starts by giving errors and timeouts, this is due to RViz requesting information from topics which haven't been initiated yet by Gazebo. To try and reduce this, we have added a delay in initialisation.
 
-\todo[inline]{Why do we have the delay?}
-\todo[inline]{Why use classes}
+As can be seen in \t{navigate.py}, the navigate class has 4 functions. The file firstly obtains the goals that it has to reach from the location file. These are stored in \t{way_points}.
+
+
+\lstinputlisting[
+	caption={The spin function},
+	label={lst:2:spin}, 
+	language=Python,
+	firstline=44,
+	lastline=59
+]{./src/3/navigate.py}
+
+The listing \ref{lst:2:spin} shows the main function for the class \t{Navigator}. The action client is made there, and with it the goals are created and sent to the action server.
+
+The program here ran fine generally, the only issue we occasionally had was when the door would close very late. If the robot was party through the door, then it could destroy the door. Another option would be that it would get stuck behind the table, this could be due to the robot not being able to find a route around the table through the door opening in order to reach the goal.
+
+If there still are waypoints, a waypoint is popped and sent to the function \t{create_goal}.
+
+\lstinputlisting[
+	caption={The \t{create_goal} function},
+	label={lst:3:createGoal}, 
+	language=Python,
+	firstline=23,
+	lastline=37
+]{./src/3/navigate.py}
+
+The goal message is created in listing \ref{lst:3:createGoal}, where the angle is also converted from an angle to quaternions. Afterwards the goal message is sent to the action server and the functions waits until it receives a response. 
+
+\lstinputlisting[
+	caption={The \t{sent_goal} function},
+	label={lst:4:sentGoal}, 
+	language=Python,
+	firstline=39,
+	lastline=42
+]{./src/3/navigate.py}
+
+In listing \ref{lst:4:sentGoal}, the goal is simply sent and the node then waits for a response, which it then prints.
+
+The robot was able to reach all the locations, but occasionally had some difficulties by going to close by corners. 
 
 \subsection*{3.b}
 \begin{lstlisting}
 	roslaunch navigation exercise3b.launch
 \end{lstlisting}
 
-The program here ran fine generally, the only issue we occasionally had was when the door would close very late. If the robot was party through the door, then it could destroy the door. Another option would be that it would get stuck behind the table, this could be due to the robot not being able to find a route around the table through the door opening in order to reach the goal.
+For this exercise the robot had to drive to 3 locations, but in a different map. The robot had to try and drive through a door which could randomly close, causing the path chosen to be blocked and making the robot have to find another path.
+
+The code can be seen in \t{navigate3b.py}, but it is so similar to exercise 3a that I will leave it for the appendix. The main difference is that the robot uses a different map and locations goals to drive to.
+
+This generally went fine, the only issue we could have was that the robot had driven around the table and was almost at the door, which would close in front of him. It would then become too difficult for him to drive around the table to a different door and then it would get stuck.
+
+Occasionally the robot also drove through the door if it closed too late, causing the door to dissapear.
