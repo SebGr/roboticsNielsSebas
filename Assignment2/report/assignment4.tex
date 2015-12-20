@@ -6,19 +6,28 @@
 	rosrun navigation goal_executioner2.py
 \end{lstlisting}
 
-One of the general struggles we found in this assignment was the issue that the robot its footprint, which was set in assignment 2, was found to be too small. This meant that the robot saw some part behind itself as a possible obstruction. This generated the problem that the robot would drive into a corner and get stuck, because it would have a wall at two sides and a non-existing obstacle behind him. We solved this by enlarging the footprint and radius until it would no longer see the obstruction.
+One of the general struggles we found in this assignment was the issue that the robot its footprint, which was set in assignment 2, was found to be too small. This meant that the robot saw some part behind itself as a possible obstruction. This generated the problem that the robot would drive into a corner and get stuck, because it would have a wall at two sides and a non-existing obstacle behind him. We solved this by enlarging the footprint and radius until it would no longer see the obstruction.  The actual code is a lot the same as with assignment 3, the main difference is the way the goal is created and selected.
 
-The exploration was done as follows: First the robot checked its surroundings for possible goals to drive to, which was done by finding all the unknown points(value -1 in the metadata map), which were adjacent to a clear(value zero in the metadata map) space. This are added in a list, after which the robot goes through the possible data points using the \t{make_plan} service.
+\lstinputlisting[
+	caption={The reshape function},
+	label={lst:4:reshape}, 
+	language=Python,
+	firstline=54,
+	lastline=57
+]{./src/4/goal_executioner2.py}
 
-The \t{make_plan} service was used in combination with a try/catch exception, to try and select a potential goal to drive to which was reachable. This was done to try and reduce the possibility of the robot selecting a goal which was too close to the wall, which would mean it would take a lot of time trying out different paths to reach the point.
+The exploration was done as follows: First the robot checked its surroundings for possible goals to drive to, which was done by finding all the unknown points(value -1 in the metadata map). The metadata map is obtained as an array, so it it first reshaped, as seen in listing \ref{lst:4:reshape}. From this map were cells found which are adjacent to a clear(value zero in the metadata map) space. These are added in a list, the code for this is seen in \cref{lst:4:goals}, after which the robot goes through the possible data points using the \t{make_plan} service.
 
-We attempted to add to the goal creation that the robot took the closest potential goal, since that that meant the robot would have to do less path finding as well as drive less far for each goal. This however caused an issue which we were unable to solve in time, and therefore have stayed to the old, slower system. 
 
-The issue was that the closest point it wanted to reach was unreachable. After a few initial goals, the potential goal would then be a point under the table, which it couldn't reach and then would fail, after which it would select a new goal, which was the closest potential goal. This was the same point so the robot would end up in a permanent loop.
+\lstinputlisting[
+	caption={The goal creation functions},
+	label={lst:4:goals}, 
+	language=Python,
+	firstline=36,
+	lastline=5
+]{./src/4/goal_executioner2.py}
 
-We wanted to fix this by sorting the potential goals by distance in a stack, and then going through them until a reachable goal had been found. Time constraints and a closed lab unfortunately prevented us from actually implementing this.
-
-The actual code is a lot the same as with assignment 3, the main difference is the way the goal is created and selected.
+The \t{make_plan} service was used in combination with a try/catch exception, to try and select a potential goal which was reachable. This was done in order to reduce the possibility of the robot selecting a goal which was too close to the wall or even one that wasn't obtainable, which would mean it would take a lot of time trying out different paths to reach that goal.
 
 \lstinputlisting[
 	caption={The main function},
@@ -28,12 +37,10 @@ The actual code is a lot the same as with assignment 3, the main difference is t
 	lastline=94
 ]{./src/4/goal_executioner2.py}
 
+As can be seen, an occupancy map is obtained, from which potential goals(way\_points) are selected and then finally a random way point is selected. After this the current position of the robot is obtained as well as calculate the goal location, since a conversion has to be made between the metadata map and the actual map. The make\_plan service then attempted to find a route. If it fails, the process is restarted until a good goal is found.
 
+We attempted to add to the goal creation that the robot took the closest potential goal, since that that meant the robot would have to do less path finding as well as drive less far for each goal. This however caused an issue which we were unable to solve in time, and therefore have stayed to the old, slower system. 
 
-\lstinputlisting[
-	caption={The goal creation functions},
-	label={lst:4:goals}, 
-	language=Python,
-	firstline=36,
-	lastline=57
-]{./src/4/goal_executioner2.py}
+The issue was that the closest point it wanted to reach was unreachable. After a few initial goals, the potential goal would then be a point under the table, which it couldn't reach and then would fail, after which it would select a new goal, which was the closest potential goal. This was the same point so the robot would end up in a permanent loop.
+
+We wanted to fix this by sorting the potential goals by distance in a stack, and then going through them until a reachable goal had been found. Time constraints and a closed lab unfortunately prevented us from actually implementing this.
