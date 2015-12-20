@@ -1,0 +1,14 @@
+Threshold:
+	-high: 33
+	-med: 30
+	-low: 27
+
+Pause:
+	-high: 1000
+	-med: 800
+	-low: 600
+
+Gain:
+	-high: 1.5
+	-med: 1.0
+	-low: 0.5

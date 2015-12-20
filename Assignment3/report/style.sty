@@ -1,0 +1,86 @@
+\RequirePackage{a4wide}
+\RequirePackage[english]{babel}
+
+%Math
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{mathtools}
+\RequirePackage{siunitx}
+\sisetup{round-mode=figures, round-precision=4, exponent-base=e, exponent-product={}}
+
+% References
+\RequirePackage{varioref}
+\RequirePackage{hyperref}
+\RequirePackage[noabbrev, capitalise]{cleveref}
+
+%Bibliography
+\RequirePackage[backend=bibtex]{biblatex}
+\RequirePackage{csquotes}
+\bibliography{biblio}
+
+%Code
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{listings}
+
+%Images
+\RequirePackage{graphicx}
+\RequirePackage[normalsize,bf]{caption}
+\RequirePackage{subcaption}
+
+%Lay out
+\usepackage[parfill]{parskip}
+
+% TODOs
+\RequirePackage{todonotes}
+
+% Code lay-out
+\definecolor{light-gray}{gray}{0.95}
+\RequirePackage{courier}
+\lstset{language=python, 
+	tabsize = 4, 
+	columns=flexible, 
+	breaklines = true, 
+	backgroundcolor=\color{light-gray},
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	basicstyle=\ttfamily\normalsize,
+	stringstyle=\color{black},
+  	identifierstyle=\color{Blue},
+  	keywordstyle=\color{cyan},
+  	commentstyle=\color{Green}
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{Blue},
+  keywordstyle=\color{cyan},
+  commentstyle=\color{Green},
+  morekeywords={robot, property, gazebo, link, origin, inertial, mass, inertia, visual, geometry, mesh, collision, joint, child, parent, material, selfCollide, static, turnGravityOff, sensor, pose, always_on, visualize, camera, horizontal_fov, image, width, height, format, depth_camera, clip, near, far, plugin, alwaysOn, updateRate, cameraName, frameName, imageTopicName, depthImageTopicName, pointCloudTopicName, cameraInfoTopicName, depthImageCameraInfoTopicName, pointCloudCutoff, pointCloudCutoffMax, hackBaseline, distortionK1, distortionK2, distortionK3, distortionT1, distortionT2, CxPrime, Cx, Cy, focalLength}
+}
+\newcommand\xml[1]{\lstinline[language=XML]{#1}}
+
+% References
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
+% Math
+\renewcommand{\vec}[1]{\ensuremath{\mathbf{#1}}}
+\renewcommand{\t}[1]{\lstinline[breaklines=true, basicstyle=\ttfamily\normalsize]{#1}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Make abs size dependent
+\makeatletter
+	\let\oldabs\abs
+	\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+
+	% Make norm size dependent
+	\let\oldnorm\norm
+	\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother

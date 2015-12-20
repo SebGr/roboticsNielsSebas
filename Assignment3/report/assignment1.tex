@@ -1,0 +1,17 @@
+%!TEX root = report.tex
+
+Sebas heeft 0 tm 4 gedaan
+Niels heeft 5 tm 9 gedaan
+Met een afstand van een halve meter.
+
+Using the settings described in the assignment, we see that it generates a group of files with a duration of 1 second, with mostly noise. The aula folders generally had the best respons with parts of actual sentences, while the other rooms, like robotlab, didn't generate any files or a few.
+
+We then started playing with the variables.
+
+Increasing the track threshold caused a decreased amount of sounds to be recognized, while decreasing the track threshold caused an increased amount of sounds to be recognized. 
+
+We did see a large difference between the results gotten by Sebastiaan and by Niels, so it appears to be that the more consistent the sentences are being spoken, the better the results will be and the easier it is to get the correct sentences. We noticed a slighty pause whenever we said \t{pseudo} or \t{Alice}, so by playing a bit with the track pause we were able to better connect those parts of the sentences to each other.
+
+The SEVD music algorithm found the most sentences, while the other two tagged closely behind. It didn't really matter.
+
+We found the settings track threshold 29, track pause 600 with SEVD to find decent results. The sentences from Niels gave better results, we believe that was due to him taking bigger pauses between sentences.
