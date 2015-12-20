@@ -78,7 +78,7 @@ The files yaml files containing the specific parameters are included from the na
 
 The calculation of a path, as mentioned above, is done by a module called the global planner. The global planner uses shortest path algorithms like Dijkstra and A* to find a path through its costmap with the lowest possible cost. Once a path is calculated, a local planner with repeatedly try to determine what to do to follow this plan. It will simulate trajectories for many different velocities and then chooses the velocities that will get the robot to its destination the fastest, without hitting obstacles or moving too far away from the plan. The default planners used in ROS are the Navfn global planner and the Trajectory Rollout local planner, which simulates over a larger period than the other common choice: Dynamic Window Approach. This might result in a slightly better performance. The navigation stack in this exercise uses these default planners, so parameters for this need not be set. Other planners could however be chosen using the \t{base\_global\_planner} and \t{base\_local\_planner} parameters.
 
-The costmaps that the planners use, are updated while the robot is moving. It is possible to shut this down when the robot is in an inactive. By default the costmaps are not shut down, but we enabled it by adding the following parameter:
+The costmaps that the planners use, are updated while the robot is moving. It is possible to shut this down when the robot is inactive. By default the costmaps are not shut down, but we enabled it by adding the following parameter:
 
 \lstinputlisting[
 	caption={Shutdown costmaps in an inactive state},
@@ -88,7 +88,7 @@ The costmaps that the planners use, are updated while the robot is moving. It is
 	lastline=43
 ]{./src/2/alice_nav.launch}
 
-Costmaps are used to check how big the risk of collision is when planning, to do this a footprint of the robot is needed to see which parts of the costmaps it covers at each moment. This footprint needs to be convex to be able to do the right calculations. Each of the planners uses an own costmap. For the global planner we used a footprint that is circular, defined by setting a \t{robot\_radius} in our \t{global_costmap_params.yaml}  file.
+Costmaps are used to check how big the risk of collision is when planning, to do this a footprint of the robot is needed to see which parts of the costmaps it covers at each moment. This footprint needs to be convex to be able to do the right calculations. Each of the planners uses their own costmap. For the global planner we used a footprint that is circular, defined by setting a \t{robot\_radius} in our \t{global_costmap_params.yaml}  file.
 
 \lstinputlisting[
 	caption={Global footprint},

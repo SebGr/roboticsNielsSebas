@@ -17,7 +17,7 @@ In order to get a map, the following commands have to be used in different termi
 	roslaunch navigation create_map.launch
 \end{lstlisting}
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{./img/map_teleop.png}
 	\caption{The map that was made through mapping with teleop keyboard package.}
@@ -35,7 +35,7 @@ For this assignment, the map from the first part had to be reused in Rviz, toget
 	roslaunch navigation amcl.launch
 \end{lstlisting}
 
-This gave a 2D map in Rviz, with an amcl representation of the robot in gazebo, as well as the 3D model in gazebo. In order to try and break the representations of the robot between Rviz and Gazebo, a lot of noise was introduced. Using this meant the rviz robot was at a different point than the gazebo robot after a while.
+This gave a 2D map in Rviz, as well as the 3D model in gazebo. In order to try and break the representations of the robot between Rviz and Gazebo, a lot of noise was introduced. Using this meant there was more uncertainty about the location, and so the rviz robot was at a different point than the gazebo robot after a while.
 
 \lstinputlisting[
 	caption={The launch file to map the room.},

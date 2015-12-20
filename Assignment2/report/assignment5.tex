@@ -30,7 +30,7 @@ From these graphs (\cref{fig:5:graph}) it became clear the it takes some time fo
 
 We used this tool together with the new topics for visualization to analyse the effect of certain parameters for the local planner.
 
-First we looked at the effects that the changes in the parameters for the angular and linear acceleration limits had on the behaviour of the robot. Slight changes in the angular limit parameter, \t{acc_lim_theta} had an effect on the range of angles that the local planner could simulate, see \cref{fig:5:acc_lim_theta}
+First we looked at the effects that the changes in the parameters for the angular and linear acceleration limits had on the behaviour of the robot. Slight changes in the angular limit parameter, \t{acc_lim_theta} had an effect on the range of angles that the local planner could simulate, see \cref{fig:5:acc_lim_theta}.
 
 \begin{figure}
 	\centering
@@ -54,7 +54,7 @@ As similar change of behaviour happened when changing \t{acc_lim_x}, the linear 
 
 We were not able to vary the limit below 0.4, this prevented the robot from moving at all. When increasing the limit, the lengths of the simulated paths seemed to become longer at the costs of the width of the paths. With higher linear acceleration limit, the robot wasn't able to make sharp turns, this is why \t{acc_lim_x: 0.4} was optimal.
 
-Furthermore, the sampling rates of the trajectory simulation can be changed with the \t{vth_samples} and \t{vx_samples} parameters. These parameters determine how many different angular velocities and linear velocities the local planner simulates. For higher values of these, the robot will find better trajectories, but will require more computations. Reducing these parameters will make the effect of this sampling visible, see \cref{fig:5:sampling}
+Furthermore, the sampling rates of the trajectory simulation can be changed with the \t{vth_samples} and \t{vx_samples} parameters. These parameters determine how many different angular velocities and linear velocities the local planner simulates. For higher values of these, the robot will find better trajectories, but will require more computations. Reducing these parameters will make the effect of this sampling visible, see \cref{fig:5:sampling}.
 
 \begin{figure}
 	\centering
@@ -64,7 +64,7 @@ Furthermore, the sampling rates of the trajectory simulation can be changed with
 	\label{fig:5:sampling}
 \end{figure}
 
-Other important simulation parameters are \t{sim_time} and \t{sim_granularity}. That determine the time of each separate trajectory simulation and the distance between locations in the simulation respectively. The effect of this is shown in \cref{fig:5:sim}
+Other important simulation parameters are \t{sim_time} and \t{sim_granularity}. That determine the time of each separate trajectory simulation and the distance between locations in the simulation respectively. The effect of this is shown in \cref{fig:5:sim}.
 
 \begin{figure}
 	\centering
@@ -74,7 +74,7 @@ Other important simulation parameters are \t{sim_time} and \t{sim_granularity}. 
 	\label{fig:5:sim}
 \end{figure}
 
-Finally the are some parameters that have an influence on the score of each simulated trajectory. The main parameters for this are \t{goal_distance_bias}, \t{path_distance_bias} and \t{occdist_scale}. The score of a trajectory is calculated as follows \cite{ROSorg}:
+Finally the are some parameters that have an influence on the score of each simulated trajectory. The main parameters for this are \t{goal_distance_bias}, \t{path_distance_bias} and \t{occdist_scale}. The score of a trajectory is calculated as follows \cite{ROSorg}.
 
 \begin{quote}
 \begin{lstlisting}[language = XML]

@@ -24,7 +24,7 @@ The exploration was done as follows: First the robot checked its surroundings fo
 	label={lst:4:goals}, 
 	language=Python,
 	firstline=36,
-	lastline=5
+	lastline=53
 ]{./src/4/goal_executioner2.py}
 
 The \t{make_plan} service was used in combination with a try/catch exception, to try and select a potential goal which was reachable. This was done in order to reduce the possibility of the robot selecting a goal which was too close to the wall or even one that wasn't obtainable, which would mean it would take a lot of time trying out different paths to reach that goal.
@@ -37,9 +37,9 @@ The \t{make_plan} service was used in combination with a try/catch exception, to
 	lastline=94
 ]{./src/4/goal_executioner2.py}
 
-As can be seen, an occupancy map is obtained, from which potential goals(way\_points) are selected and then finally a random way point is selected. After this the current position of the robot is obtained as well as calculate the goal location, since a conversion has to be made between the metadata map and the actual map. The make\_plan service then attempted to find a route. If it fails, the process is restarted until a good goal is found.
+As can be seen, an occupancy map is obtained, from which potential goals(way\_points) are selected and then finally a random way point is selected. After this the current position of the robot is obtained as well as calculate the goal location, since a conversion has to be made between the metadata map and the actual map. The make\_plan service then attempted to find a route. If it fails, the process is restarted until a reachable goal is found.
 
-We attempted to add to the goal creation that the robot took the closest potential goal, since that that meant the robot would have to do less path finding as well as drive less far for each goal. This however caused an issue which we were unable to solve in time, and therefore have stayed to the old, slower system. 
+We attempted another addition to the goal creation algorithm, that the robot took the closest potential goal. This would mean that the robot would have to do less path finding as well as drive less far for each goal. This however caused an issue which we were unable to solve in time, and therefore have stayed to the old, slower system. 
 
 The issue was that the closest point it wanted to reach was unreachable. After a few initial goals, the potential goal would then be a point under the table, which it couldn't reach and then would fail, after which it would select a new goal, which was the closest potential goal. This was the same point so the robot would end up in a permanent loop.
 
