@@ -14,12 +14,8 @@ In order to get a map, the following commands have to be used in different termi
 
 \begin{lstlisting}
 	roslaunch navigation exercise1.launch
-	roslaunch navigation create_map
+	roslaunch navigation create_map.launch
 \end{lstlisting}
-
-\begin{itemize}
-	\item \todo[inline]{De transforms gebeuren automagisch op basis van URDF, noem welke het zijn. zie GMapping wiki.}
-\end{itemize}
 
 \begin{figure}
 	\centering
@@ -28,9 +24,9 @@ In order to get a map, the following commands have to be used in different termi
 	\label{fig:1:map}
 \end{figure}
 
-\subsection*{1.b}
+The transformations are done automatically, as mentioned. It is done through the parameter \t{base_frame} in \t{gmapping}, which has a default called \t{base_link}.
 
-\todo[inline]{How do you run this?!}
+\subsection*{1.b}
 
 For this assignment, the map from the first part had to be reused in Rviz, together with amcl. The following commands were necessary:
 
@@ -48,6 +44,11 @@ This gave a 2D map in Rviz, with an amcl representation of the robot in gazebo, 
 	float
 ]{./src/1/amcl.launch}
 
-\todo[inline]{add code to change location through python}
-\todo[inline]{change speeds on robot}
-\todo[inline]{show difference gazebo/rviz}
+\lstinputlisting[
+	caption={The launch file to map the room.},
+	label={lst:3:initPose}, 
+	language=Python,
+	float
+]{./src/1/initPose.py}
+
+The robot its original position had to be changed with python. This can be seen in the listing \ref{lst:3:initPose}. In order to break the AMCL behavior, we played with the noise. As can be seen in listing \ref{lst:2:teleopAmcl}, we change the parameters for \t{odom_alphaN}, with N going from 1 to 4, to $1.5$ instead of $0.2$. This caused the location of the robot in Rviz to occasionally differ from the representation in Gazebo, which could eventually lead to a permanent difference in location.
