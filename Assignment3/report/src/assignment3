@@ -1,0 +1,25 @@
+[general]
+starting_behavior = movetolocation
+
+[body]
+number_of_naos = 0
+number_of_pioneers = 0
+nao_ip_0 = localhost
+nao_port_0 = 9559
+pioneer_ip_0 = pioneer
+pioneer_port_0 = 12345
+
+[sensor_integration]
+
+
+# for speech, choose mic or kinect
+[speech_controller]
+# start_speech = true
+# source = kinect
+# grammar = NielsSebastiaan.gram
+
+[vision_controller]
+
+[sonar_controller]
+
+[navigation_controller]
