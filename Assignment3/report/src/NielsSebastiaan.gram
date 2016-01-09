@@ -1,0 +1,20 @@
+#JSGF v1.0;
+
+grammar vcc;
+
+public <all> = ( <command> | <question> | <request>);
+
+<command> = <start> [please] <verb> to the <location>;
+
+<verb> = (go | navigate | move)
+
+<start> = (alice|Alice);
+
+<question> = [<start>] <sentence>;
+
+<sentence> = ( what time is it | what is the oldest most widely used drug on earth | who are your creators);
+
+<location> = (kitchen | work space | living room);
+
+<request> = <start> [please] approach the dining table;
+
