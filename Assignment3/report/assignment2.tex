@@ -1,6 +1,6 @@
-T%!TEX root = report.tex
+%!TEX root = report.tex
 
-The sweep has been done for the variables pause(low 600, high 1000), gain(low 0.5, high 1.5) and threshold(low 27, high 33). We found that the following settings gave the highest percentages:
+The sweep has been done for the variables \t{pause}(low 600, high 1000), which determines the milliseconds of silence the recognizer should take between sentences, \t{gain}(low 0.5, high 1.5), which seemed to control the volume of the mixes, and \t{threshold}(low 27, high 33) which determines at which volume sentences start being recognized. We found that the following settings gave the highest percentages:
 
 \begin{table}[]
 \centering
@@ -13,5 +13,5 @@ Threshold & 27
 \end{tabular}
 \end{table}
 
-Calculating the mean of the scores, we found that using high pause with a low threshold gave the best results, with an average percentage of 54.5$\%$. The default settings were around 32$\%$, as most of the other settings. A high threshold showed a sharp decrease in the percentages, up to 4.5$\%$.
+Calculating the mean of the scores, we found that using high pause with a low threshold gave the best results, with an average percentage of 54.5$\%$. The default settings were around 32$\%$, as most of the other settings. A high threshold showed a sharp decrease in the percentages, up to 4.5$\%$ The full results of the parameter experiments can be found in the Appendix.
 
