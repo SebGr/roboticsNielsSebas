@@ -16,4 +16,10 @@ Afterwards the sentence is checked if there are tokens like \t{<verb>} or \t{<lo
 
 If a verb is found from the dictionary, then the location is retrieved and the robot responses that he will move to the location. If it can't find a verb from the dictionary, then from the list of sentences it should be able to respond to, there is only one option left, a request to reach the dining table. Then that is the final response.
 
-Unfortunately in our hurry did we forget to also send a copy of our grammar to ourselves. We will hand that in a day later, when we have access to our computer again.
+\lstinputlisting[
+	caption={The grammar used},
+	label={grammar}, 
+	language=XML,
+]{./src/NielsSebastiaan.gram}
+
+The grammar used can be seen in \ref{grammar}. To make the grammar easily usable for the NLP class, have we named the verbs \t{<verb>} and names with \t{<start}. The sentences are hardcoded due to their lack of overlap with the other sentences that the program had to be able to respond to.
