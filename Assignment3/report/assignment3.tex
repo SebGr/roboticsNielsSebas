@@ -23,3 +23,10 @@ If a verb is found from the dictionary, then the location is retrieved and the r
 ]{./src/NielsSebastiaan.gram}
 
 The grammar used can be seen in \cref{grammar}. To make the grammar easily usable for the NLP class, have we named the verbs \t{<verb>} and names with \t{<start}. The sentences are hardcoded due to their lack of overlap with the other sentences that the program had to be able to respond to.
+
+Launch instructions:
+\begin{lstlisting}
+$ roscore
+$ ./start.sh config/movetolocation
+$ python speech/speech_to_memory.py "hyp1"
+\end{lstlisting}
