@@ -10,7 +10,7 @@ We created our own behavior called \t{movetolocation}, in which the program rece
 	lastline=48
 ]{./src/movetolocation_0.py}
 
-The response is formulated in \ref{code:3}, where the class NLP is also called. The optionals as well as any potential names are first removed in order to reduce the complexity of the message that has to be parsed. 
+The response is formulated in \cref{code:3}, where the class NLP is also called. The optionals as well as any potential names are first removed in order to reduce the complexity of the message that has to be parsed. 
 
 Afterwards the sentence is checked if there are tokens like \t{<verb>} or \t{<location>} present. If they aren't, then an if sentence == x, reply y system is used. If there are tokens present, then the sentence gets split in the respective words. 
 
@@ -22,4 +22,4 @@ If a verb is found from the dictionary, then the location is retrieved and the r
 	language=XML,
 ]{./src/NielsSebastiaan.gram}
 
-The grammar used can be seen in \ref{grammar}. To make the grammar easily usable for the NLP class, have we named the verbs \t{<verb>} and names with \t{<start}. The sentences are hardcoded due to their lack of overlap with the other sentences that the program had to be able to respond to.
+The grammar used can be seen in \cref{grammar}. To make the grammar easily usable for the NLP class, have we named the verbs \t{<verb>} and names with \t{<start}. The sentences are hardcoded due to their lack of overlap with the other sentences that the program had to be able to respond to.
