@@ -4,7 +4,6 @@
 
 \begin{table}[!h]
 \centering
-\label{parameters1}
 \begin{tabular}{ll}
 \textbf{Parameter}           & \textbf{Value} \\ \hline  
 Learning rate($\eta$) & 0.01   \\
@@ -15,13 +14,13 @@ Max epochs          & 1000   \\
 Hidden nodes        & 500   
 \end{tabular}
 \caption{The parameters used for the Neural Network}
+\label{parameters1}
 \end{table}
 
 A neural network had to be altered in order to see what the results were when multiple layers were used. The MNIST handwritten digits dataset was used as the data set on which the neural network trained and tested. The parameters used can be seen in Table \ref{parameters1}. Each of the layers added used 500 nodes. The output layer was a logistic regression layer with negative cost likelihood.
 
 \begin{table}[!h]
 \centering
-\label{results}
 \begin{tabular}{llll}
 \textbf{\# of hidden layers} & \textbf{Validation error} & \textbf{Test error} & \textbf{\# of epochs} \\ \hline
 1                            &                           &                     &                       \\
@@ -29,9 +28,10 @@ A neural network had to be altered in order to see what the results were when mu
 3                            &                           &                     &                      
 \end{tabular}
 \caption{The results obtained using different amounts of hidden layers.}
+\label{results1}
 \end{table}
 
-The results can be seen in Table \ref{results}. The learning algorithm potentially can run for 1000 epochs, but stops once it finished learning.
+The results can be seen in Table \ref{results1}. The learning algorithm potentially can run for 1000 epochs, but stops once it finished learning.
 
 \subsection*{Linear Output layers with Mean Squared Error}
 

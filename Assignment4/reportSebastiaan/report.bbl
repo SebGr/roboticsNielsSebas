@@ -16,6 +16,49 @@
   {}
 \endgroup
 
+\entry{srivastava2014dropout}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Srivastava}{S.}%
+     {Nitish}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hinton}{H.}%
+     {Geoffrey}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Krizhevsky}{K.}%
+     {Alex}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sutskever}{S.}%
+     {Ilya}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Salakhutdinov}{S.}%
+     {Ruslan}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {JMLR. org}%
+  }
+  \strng{namehash}{SN+1}
+  \strng{fullhash}{SNHGKASISR1}
+  \field{sortinit}{S}
+  \field{number}{1}
+  \field{pages}{1929\bibrangedash 1958}
+  \field{title}{Dropout: A simple way to prevent neural networks from
+  overfitting}
+  \field{volume}{15}
+  \field{journaltitle}{The Journal of Machine Learning Research}
+  \field{year}{2014}
+\endentry
+
 \lossort
 \endlossort
 
