@@ -1,0 +1,461 @@
+training @ iter =  0
+epoch 1, minibatch 80/80, validation error 86.250000 %
+training error 86.100000 %
+     epoch 1, minibatch 80/80, test error of best model 86.260000 %
+training @ iter =  100
+epoch 2, minibatch 80/80, validation error 87.630000 %
+training error 88.235000 %
+training @ iter =  200
+epoch 3, minibatch 80/80, validation error 86.020000 %
+training error 86.615000 %
+     epoch 3, minibatch 80/80, test error of best model 86.450000 %
+training @ iter =  300
+epoch 4, minibatch 80/80, validation error 89.660000 %
+training error 89.460000 %
+epoch 5, minibatch 80/80, validation error 83.650000 %
+training error 84.470000 %
+     epoch 5, minibatch 80/80, test error of best model 84.170000 %
+training @ iter =  400
+epoch 6, minibatch 80/80, validation error 82.850000 %
+training error 83.167500 %
+     epoch 6, minibatch 80/80, test error of best model 82.990000 %
+training @ iter =  500
+epoch 7, minibatch 80/80, validation error 83.600000 %
+training error 83.660000 %
+training @ iter =  600
+epoch 8, minibatch 80/80, validation error 82.260000 %
+training error 82.935000 %
+     epoch 8, minibatch 80/80, test error of best model 82.840000 %
+training @ iter =  700
+epoch 9, minibatch 80/80, validation error 81.270000 %
+training error 81.275000 %
+     epoch 9, minibatch 80/80, test error of best model 80.780000 %
+epoch 10, minibatch 80/80, validation error 79.940000 %
+training error 80.017500 %
+     epoch 10, minibatch 80/80, test error of best model 79.630000 %
+training @ iter =  800
+epoch 11, minibatch 80/80, validation error 78.930000 %
+training error 78.682500 %
+     epoch 11, minibatch 80/80, test error of best model 78.400000 %
+training @ iter =  900
+epoch 12, minibatch 80/80, validation error 76.330000 %
+training error 76.767500 %
+     epoch 12, minibatch 80/80, test error of best model 76.010000 %
+training @ iter =  1000
+epoch 13, minibatch 80/80, validation error 74.680000 %
+training error 74.817500 %
+     epoch 13, minibatch 80/80, test error of best model 74.100000 %
+training @ iter =  1100
+epoch 14, minibatch 80/80, validation error 89.640000 %
+training error 89.762500 %
+epoch 15, minibatch 80/80, validation error 74.340000 %
+training error 74.082500 %
+     epoch 15, minibatch 80/80, test error of best model 73.640000 %
+training @ iter =  1200
+epoch 16, minibatch 80/80, validation error 71.170000 %
+training error 71.435000 %
+     epoch 16, minibatch 80/80, test error of best model 71.200000 %
+training @ iter =  1300
+epoch 17, minibatch 80/80, validation error 77.750000 %
+training error 77.552500 %
+training @ iter =  1400
+epoch 18, minibatch 80/80, validation error 68.420000 %
+training error 68.365000 %
+     epoch 18, minibatch 80/80, test error of best model 68.650000 %
+training @ iter =  1500
+epoch 19, minibatch 80/80, validation error 64.920000 %
+training error 65.190000 %
+     epoch 19, minibatch 80/80, test error of best model 65.300000 %
+epoch 20, minibatch 80/80, validation error 67.530000 %
+training error 67.175000 %
+training @ iter =  1600
+epoch 21, minibatch 80/80, validation error 63.540000 %
+training error 63.412500 %
+     epoch 21, minibatch 80/80, test error of best model 63.590000 %
+training @ iter =  1700
+epoch 22, minibatch 80/80, validation error 65.810000 %
+training error 65.420000 %
+training @ iter =  1800
+epoch 23, minibatch 80/80, validation error 65.850000 %
+training error 65.150000 %
+training @ iter =  1900
+epoch 24, minibatch 80/80, validation error 62.840000 %
+training error 61.660000 %
+     epoch 24, minibatch 80/80, test error of best model 62.510000 %
+epoch 25, minibatch 80/80, validation error 59.030000 %
+training error 57.400000 %
+     epoch 25, minibatch 80/80, test error of best model 59.020000 %
+training @ iter =  2000
+epoch 26, minibatch 80/80, validation error 61.780000 %
+training error 60.637500 %
+training @ iter =  2100
+epoch 27, minibatch 80/80, validation error 59.780000 %
+training error 58.680000 %
+training @ iter =  2200
+epoch 28, minibatch 80/80, validation error 58.900000 %
+training error 57.210000 %
+     epoch 28, minibatch 80/80, test error of best model 58.620000 %
+training @ iter =  2300
+epoch 29, minibatch 80/80, validation error 60.440000 %
+training error 59.262500 %
+epoch 30, minibatch 80/80, validation error 55.640000 %
+training error 52.867500 %
+     epoch 30, minibatch 80/80, test error of best model 55.350000 %
+training @ iter =  2400
+epoch 31, minibatch 80/80, validation error 60.720000 %
+training error 58.620000 %
+training @ iter =  2500
+epoch 32, minibatch 80/80, validation error 55.760000 %
+training error 52.250000 %
+training @ iter =  2600
+epoch 33, minibatch 80/80, validation error 61.610000 %
+training error 59.302500 %
+training @ iter =  2700
+epoch 34, minibatch 80/80, validation error 57.160000 %
+training error 54.030000 %
+epoch 35, minibatch 80/80, validation error 53.580000 %
+training error 48.442500 %
+     epoch 35, minibatch 80/80, test error of best model 52.380000 %
+training @ iter =  2800
+epoch 36, minibatch 80/80, validation error 58.360000 %
+training error 55.515000 %
+training @ iter =  2900
+epoch 37, minibatch 80/80, validation error 54.660000 %
+training error 50.057500 %
+training @ iter =  3000
+epoch 38, minibatch 80/80, validation error 53.860000 %
+training error 48.217500 %
+training @ iter =  3100
+epoch 39, minibatch 80/80, validation error 52.540000 %
+training error 46.167500 %
+     epoch 39, minibatch 80/80, test error of best model 51.920000 %
+epoch 40, minibatch 80/80, validation error 52.330000 %
+training error 46.150000 %
+     epoch 40, minibatch 80/80, test error of best model 52.310000 %
+training @ iter =  3200
+epoch 41, minibatch 80/80, validation error 56.900000 %
+training error 50.912500 %
+training @ iter =  3300
+epoch 42, minibatch 80/80, validation error 52.390000 %
+training error 45.015000 %
+training @ iter =  3400
+epoch 43, minibatch 80/80, validation error 52.730000 %
+training error 44.577500 %
+training @ iter =  3500
+epoch 44, minibatch 80/80, validation error 51.140000 %
+training error 42.485000 %
+     epoch 44, minibatch 80/80, test error of best model 51.610000 %
+epoch 45, minibatch 80/80, validation error 53.830000 %
+training error 46.155000 %
+training @ iter =  3600
+epoch 46, minibatch 80/80, validation error 50.850000 %
+training error 40.220000 %
+     epoch 46, minibatch 80/80, test error of best model 50.920000 %
+training @ iter =  3700
+epoch 47, minibatch 80/80, validation error 52.200000 %
+training error 42.730000 %
+training @ iter =  3800
+epoch 48, minibatch 80/80, validation error 51.530000 %
+training error 39.570000 %
+training @ iter =  3900
+epoch 49, minibatch 80/80, validation error 49.880000 %
+training error 37.130000 %
+     epoch 49, minibatch 80/80, test error of best model 49.980000 %
+epoch 50, minibatch 80/80, validation error 53.670000 %
+training error 43.880000 %
+training @ iter =  4000
+epoch 51, minibatch 80/80, validation error 52.250000 %
+training error 39.787500 %
+training @ iter =  4100
+epoch 52, minibatch 80/80, validation error 53.020000 %
+training error 38.660000 %
+training @ iter =  4200
+epoch 53, minibatch 80/80, validation error 52.730000 %
+training error 39.280000 %
+training @ iter =  4300
+epoch 54, minibatch 80/80, validation error 55.220000 %
+training error 43.802500 %
+epoch 55, minibatch 80/80, validation error 52.190000 %
+training error 37.995000 %
+training @ iter =  4400
+epoch 56, minibatch 80/80, validation error 50.290000 %
+training error 32.440000 %
+training @ iter =  4500
+epoch 57, minibatch 80/80, validation error 54.710000 %
+training error 39.250000 %
+training @ iter =  4600
+epoch 58, minibatch 80/80, validation error 51.210000 %
+training error 33.562500 %
+training @ iter =  4700
+epoch 59, minibatch 80/80, validation error 52.090000 %
+training error 33.820000 %
+epoch 60, minibatch 80/80, validation error 50.750000 %
+training error 29.252500 %
+training @ iter =  4800
+epoch 61, minibatch 80/80, validation error 49.860000 %
+training error 27.917500 %
+     epoch 61, minibatch 80/80, test error of best model 50.710000 %
+training @ iter =  4900
+epoch 62, minibatch 80/80, validation error 49.530000 %
+training error 25.257500 %
+     epoch 62, minibatch 80/80, test error of best model 49.440000 %
+training @ iter =  5000
+epoch 63, minibatch 80/80, validation error 53.660000 %
+training error 32.905000 %
+training @ iter =  5100
+epoch 64, minibatch 80/80, validation error 49.410000 %
+training error 25.377500 %
+     epoch 64, minibatch 80/80, test error of best model 49.980000 %
+epoch 65, minibatch 80/80, validation error 50.100000 %
+training error 24.587500 %
+training @ iter =  5200
+epoch 66, minibatch 80/80, validation error 56.290000 %
+training error 38.860000 %
+training @ iter =  5300
+epoch 67, minibatch 80/80, validation error 51.840000 %
+training error 27.345000 %
+training @ iter =  5400
+epoch 68, minibatch 80/80, validation error 49.700000 %
+training error 21.357500 %
+training @ iter =  5500
+epoch 69, minibatch 80/80, validation error 49.050000 %
+training error 19.350000 %
+     epoch 69, minibatch 80/80, test error of best model 50.270000 %
+epoch 70, minibatch 80/80, validation error 49.160000 %
+training error 18.492500 %
+training @ iter =  5600
+epoch 71, minibatch 80/80, validation error 50.680000 %
+training error 20.300000 %
+training @ iter =  5700
+epoch 72, minibatch 80/80, validation error 50.240000 %
+training error 20.647500 %
+training @ iter =  5800
+epoch 73, minibatch 80/80, validation error 50.140000 %
+training error 16.500000 %
+training @ iter =  5900
+epoch 74, minibatch 80/80, validation error 56.000000 %
+training error 32.175000 %
+epoch 75, minibatch 80/80, validation error 50.850000 %
+training error 19.285000 %
+training @ iter =  6000
+epoch 76, minibatch 80/80, validation error 48.790000 %
+training error 12.140000 %
+     epoch 76, minibatch 80/80, test error of best model 49.500000 %
+training @ iter =  6100
+epoch 77, minibatch 80/80, validation error 51.440000 %
+training error 17.567500 %
+training @ iter =  6200
+epoch 78, minibatch 80/80, validation error 49.560000 %
+training error 12.487500 %
+training @ iter =  6300
+epoch 79, minibatch 80/80, validation error 48.950000 %
+training error 10.620000 %
+epoch 80, minibatch 80/80, validation error 48.850000 %
+training error 8.735000 %
+training @ iter =  6400
+epoch 81, minibatch 80/80, validation error 53.380000 %
+training error 19.152500 %
+training @ iter =  6500
+epoch 82, minibatch 80/80, validation error 48.970000 %
+training error 7.935000 %
+training @ iter =  6600
+epoch 83, minibatch 80/80, validation error 49.090000 %
+training error 7.075000 %
+training @ iter =  6700
+epoch 84, minibatch 80/80, validation error 50.430000 %
+training error 12.690000 %
+epoch 85, minibatch 80/80, validation error 48.880000 %
+training error 6.902500 %
+training @ iter =  6800
+epoch 86, minibatch 80/80, validation error 49.050000 %
+training error 5.742500 %
+training @ iter =  6900
+epoch 87, minibatch 80/80, validation error 48.820000 %
+training error 4.685000 %
+training @ iter =  7000
+epoch 88, minibatch 80/80, validation error 48.750000 %
+training error 3.827500 %
+     epoch 88, minibatch 80/80, test error of best model 49.080000 %
+training @ iter =  7100
+epoch 89, minibatch 80/80, validation error 57.210000 %
+training error 33.197500 %
+epoch 90, minibatch 80/80, validation error 49.350000 %
+training error 7.962500 %
+training @ iter =  7200
+epoch 91, minibatch 80/80, validation error 48.970000 %
+training error 4.182500 %
+training @ iter =  7300
+epoch 92, minibatch 80/80, validation error 48.800000 %
+training error 3.072500 %
+training @ iter =  7400
+epoch 93, minibatch 80/80, validation error 48.780000 %
+training error 2.555000 %
+training @ iter =  7500
+epoch 94, minibatch 80/80, validation error 48.830000 %
+training error 2.132500 %
+epoch 95, minibatch 80/80, validation error 48.600000 %
+training error 1.725000 %
+     epoch 95, minibatch 80/80, test error of best model 48.770000 %
+training @ iter =  7600
+epoch 96, minibatch 80/80, validation error 48.690000 %
+training error 1.500000 %
+training @ iter =  7700
+epoch 97, minibatch 80/80, validation error 48.740000 %
+training error 1.272500 %
+training @ iter =  7800
+epoch 98, minibatch 80/80, validation error 48.670000 %
+training error 1.060000 %
+training @ iter =  7900
+epoch 99, minibatch 80/80, validation error 48.710000 %
+training error 0.907500 %
+epoch 100, minibatch 80/80, validation error 48.670000 %
+training error 0.762500 %
+training @ iter =  8000
+epoch 101, minibatch 80/80, validation error 48.500000 %
+training error 0.642500 %
+     epoch 101, minibatch 80/80, test error of best model 48.900000 %
+training @ iter =  8100
+epoch 102, minibatch 80/80, validation error 48.520000 %
+training error 0.552500 %
+training @ iter =  8200
+epoch 103, minibatch 80/80, validation error 48.390000 %
+training error 0.465000 %
+     epoch 103, minibatch 80/80, test error of best model 48.800000 %
+training @ iter =  8300
+epoch 104, minibatch 80/80, validation error 48.450000 %
+training error 0.407500 %
+epoch 105, minibatch 80/80, validation error 48.460000 %
+training error 0.342500 %
+training @ iter =  8400
+epoch 106, minibatch 80/80, validation error 48.420000 %
+training error 0.277500 %
+training @ iter =  8500
+epoch 107, minibatch 80/80, validation error 48.570000 %
+training error 0.230000 %
+training @ iter =  8600
+epoch 108, minibatch 80/80, validation error 48.480000 %
+training error 0.202500 %
+training @ iter =  8700
+epoch 109, minibatch 80/80, validation error 48.510000 %
+training error 0.177500 %
+epoch 110, minibatch 80/80, validation error 48.360000 %
+training error 0.140000 %
+     epoch 110, minibatch 80/80, test error of best model 48.860000 %
+training @ iter =  8800
+epoch 111, minibatch 80/80, validation error 48.610000 %
+training error 0.120000 %
+training @ iter =  8900
+epoch 112, minibatch 80/80, validation error 48.590000 %
+training error 0.105000 %
+training @ iter =  9000
+epoch 113, minibatch 80/80, validation error 48.550000 %
+training error 0.100000 %
+training @ iter =  9100
+epoch 114, minibatch 80/80, validation error 48.640000 %
+training error 0.095000 %
+epoch 115, minibatch 80/80, validation error 48.560000 %
+training error 0.090000 %
+training @ iter =  9200
+epoch 116, minibatch 80/80, validation error 48.630000 %
+training error 0.075000 %
+training @ iter =  9300
+epoch 117, minibatch 80/80, validation error 48.610000 %
+training error 0.070000 %
+training @ iter =  9400
+epoch 118, minibatch 80/80, validation error 48.580000 %
+training error 0.070000 %
+training @ iter =  9500
+epoch 119, minibatch 80/80, validation error 48.620000 %
+training error 0.062500 %
+epoch 120, minibatch 80/80, validation error 48.630000 %
+training error 0.060000 %
+training @ iter =  9600
+epoch 121, minibatch 80/80, validation error 48.630000 %
+training error 0.055000 %
+training @ iter =  9700
+epoch 122, minibatch 80/80, validation error 48.680000 %
+training error 0.052500 %
+training @ iter =  9800
+epoch 123, minibatch 80/80, validation error 48.710000 %
+training error 0.050000 %
+training @ iter =  9900
+epoch 124, minibatch 80/80, validation error 48.670000 %
+training error 0.050000 %
+epoch 125, minibatch 80/80, validation error 48.630000 %
+training error 0.045000 %
+training @ iter =  10000
+epoch 126, minibatch 80/80, validation error 48.610000 %
+training error 0.040000 %
+training @ iter =  10100
+epoch 127, minibatch 80/80, validation error 48.680000 %
+training error 0.037500 %
+training @ iter =  10200
+epoch 128, minibatch 80/80, validation error 48.630000 %
+training error 0.040000 %
+training @ iter =  10300
+epoch 129, minibatch 80/80, validation error 48.610000 %
+training error 0.035000 %
+epoch 130, minibatch 80/80, validation error 48.670000 %
+training error 0.035000 %
+training @ iter =  10400
+epoch 131, minibatch 80/80, validation error 48.640000 %
+training error 0.035000 %
+training @ iter =  10500
+epoch 132, minibatch 80/80, validation error 48.520000 %
+training error 0.032500 %
+training @ iter =  10600
+epoch 133, minibatch 80/80, validation error 48.540000 %
+training error 0.030000 %
+training @ iter =  10700
+epoch 134, minibatch 80/80, validation error 48.580000 %
+training error 0.027500 %
+epoch 135, minibatch 80/80, validation error 48.560000 %
+training error 0.025000 %
+training @ iter =  10800
+epoch 136, minibatch 80/80, validation error 48.530000 %
+training error 0.027500 %
+training @ iter =  10900
+epoch 137, minibatch 80/80, validation error 48.500000 %
+training error 0.025000 %
+training @ iter =  11000
+epoch 138, minibatch 80/80, validation error 48.530000 %
+training error 0.025000 %
+training @ iter =  11100
+epoch 139, minibatch 80/80, validation error 48.500000 %
+training error 0.025000 %
+epoch 140, minibatch 80/80, validation error 48.480000 %
+training error 0.022500 %
+training @ iter =  11200
+epoch 141, minibatch 80/80, validation error 48.500000 %
+training error 0.020000 %
+training @ iter =  11300
+epoch 142, minibatch 80/80, validation error 48.480000 %
+training error 0.020000 %
+training @ iter =  11400
+epoch 143, minibatch 80/80, validation error 48.540000 %
+training error 0.020000 %
+training @ iter =  11500
+epoch 144, minibatch 80/80, validation error 48.580000 %
+training error 0.020000 %
+epoch 145, minibatch 80/80, validation error 48.470000 %
+training error 0.020000 %
+training @ iter =  11600
+epoch 146, minibatch 80/80, validation error 48.460000 %
+training error 0.020000 %
+training @ iter =  11700
+epoch 147, minibatch 80/80, validation error 48.500000 %
+training error 0.017500 %
+training @ iter =  11800
+epoch 148, minibatch 80/80, validation error 48.450000 %
+training error 0.017500 %
+training @ iter =  11900
+epoch 149, minibatch 80/80, validation error 48.570000 %
+training error 0.017500 %
+epoch 150, minibatch 80/80, validation error 48.570000 %
+training error 0.017500 %
+training @ iter =  12000
+epoch 151, minibatch 80/80, validation error 48.580000 %
+training error 0.017500 %
+training @ iter =  12100
+Optimization complete.
+
