@@ -16,6 +16,34 @@
   {}
 \endgroup
 
+\entry{krizhevsky2012imagenet}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Krizhevsky}{K.}%
+     {Alex}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sutskever}{S.}%
+     {Ilya}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hinton}{H.}%
+     {Geoffrey~E}{G.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KASIHGE1}
+  \strng{fullhash}{KASIHGE1}
+  \field{sortinit}{K}
+  \field{booktitle}{Advances in neural information processing systems}
+  \field{pages}{1097\bibrangedash 1105}
+  \field{title}{Imagenet classification with deep convolutional neural
+  networks}
+  \field{year}{2012}
+\endentry
+
 \entry{srivastava2014dropout}{article}{}
   \name{author}{5}{}{%
     {{}%

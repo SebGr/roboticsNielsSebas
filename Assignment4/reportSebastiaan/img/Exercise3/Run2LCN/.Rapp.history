@@ -1,0 +1,148 @@
+data = read.table('trainingValidTest.txt')#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,1), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset without LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+data = read.table('trainingValidTest.txt')#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,1), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset without LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+clear all
+data
+range
+data = read.table('trainingValidTest.txt')#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,1), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset with LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+data = read.table('trainingValidTest.txt')#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,1), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset with LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+length(data)
+size(data)
+summary(data)
+data
+test <- c(8.475249999999998618e-01 7.869999999999996998e-01 7.637749999999999817e-01 7.455750000000000988e-01 7.729500000000000259e-01 7.872500000000001164e-01 7.066250000000002807e-01 6.662999999999998924e-01 6.415999999999999481e-01 6.496250000000001190e-01 6.252000000000000890e-01 6.143749999999998934e-01 6.108499999999998931e-01 5.906749999999996170e-01 5.908999999999998698e-01 5.921999999999997266e-01 5.770000000000001794e-01 5.709500000000000686e-01 5.639000000000000679e-01 5.635000000000001119e-01 5.671749999999998737e-01 5.474749999999999339e-01 5.432250000000001799e-01 5.484500000000001041e-01 5.379000000000000448e-01 5.266999999999996129e-01 5.372249999999998415e-01 5.253500000000000947e-01 5.176750000000001073e-01 5.330750000000000766e-01 5.073500000000001897e-01 5.005500000000000504e-01 5.157499999999999307e-01 4.877750000000001807e-01 5.147500000000000409e-01 5.031499999999998751e-01 5.041249999999999343e-01 5.141999999999999904e-01 4.760250000000001980e-01 4.752000000000001778e-01 4.779000000000002690e-01 4.709750000000001435e-01 4.656000000000000694e-01 4.567250000000001586e-01 4.591250000000000608e-01 4.777999999999999470e-01 4.512250000000000982e-01 4.613500000000000378e-01 4.639250000000002538e-01 4.593250000000000388e-01 4.553750000000001963e-01 4.330250000000000488e-01 4.710500000000003018e-01 4.260749999999999815e-01 4.364250000000001739e-01 4.285250000000000448e-01 4.419500000000000095e-01 4.302500000000000213e-01 4.228750000000001674e-01 4.101000000000000201e-01 4.105500000000000815e-01 4.179999999999999827e-01 4.274999999999998801e-01 4.042500000000000537e-01 4.017250000000000543e-01 4.142750000000000599e-01 4.087750000000000550e-01 4.219499999999999917e-01 4.018249999999998212e-01 3.909749999999999059e-01 3.909749999999999615e-01 4.083249999999999380e-01 3.849000000000000199e-01 3.875250000000000083e-01 4.014000000000000346e-01 3.780499999999998861e-01 3.787249999999999783e-01 3.712999999999999634e-01 4.084500000000000908e-01 3.786500000000000976e-01 3.641999999999999682e-01 3.985500000000000709e-01 3.625749999999999251e-01 3.802499999999999214e-01 3.795499999999999430e-01 3.598249999999999504e-01 3.557750000000000634e-01 3.509999999999998677e-01 3.614749999999998797e-01 3.830500000000000016e-01 3.474249999999998728e-01 3.930749999999998967e-01 3.795499999999999430e-01 3.634749999999999925e-01 3.477499999999998925e-01 3.398999999999999244e-01 3.436499999999999000e-01 3.551500000000001322e-01 3.404749999999999721e-01 3.408249999999999336e-01 3.425500000000000766e-01 3.323249999999998705e-01 3.378499999999999837e-01 3.257750000000000923e-01 3.391749999999999488e-01 3.669749999999999401e-01 3.286999999999999367e-01 3.178749999999999076e-01 3.315249999999999586e-01 3.162749999999999728e-01 3.085499999999998799e-01 3.079999999999999405e-01 3.384749999999999703e-01 3.196999999999998732e-01 3.348250000000000393e-01 3.037000000000000810e-01 3.070749999999998758e-01 3.128249999999999087e-01 3.045750000000000401e-01 2.981249999999999734e-01 2.961500000000000243e-01 3.046749999999998626e-01 2.971249999999999170e-01 2.908749999999999947e-01 3.067999999999997951e-01 3.094749999999998891e-01 2.837250000000000050e-01 2.860750000000000237e-01 3.035249999999999337e-01 2.823500000000001009e-01 2.769500000000000295e-01 2.896999999999999575e-01 2.747750000000000470e-01 2.717249999999999943e-01 2.823999999999999844e-01 2.790499999999999647e-01 2.927749999999998964e-01 2.876499999999999058e-01 2.758249999999999313e-01 2.711749999999999439e-01 2.813749999999999862e-01 2.632249999999999868e-01 2.772000000000000020e-01 2.716250000000000053e-01 2.576000000000000512e-01 2.692249999999999366e-01 2.602499999999999813e-01 2.517249999999999210e-01 2.432500000000001050e-01 2.501500000000001500e-01 2.532249999999999779e-01 2.422750000000000181e-01 2.454999999999999960e-01 2.383499999999999230e-01 2.473000000000000198e-01 2.318750000000000533e-01 2.851250000000000173e-01 2.340000000000000691e-01 2.505249999999999977e-01 2.271000000000001351e-01 2.316750000000000198e-01 2.364499999999999658e-01 2.360750000000000348e-01 2.374999999999999611e-01 2.264250000000000151e-01 2.169249999999998957e-01 2.329249999999999932e-01 2.317000000000001558e-01 2.272500000000000353e-01 2.129500000000001114e-01 2.141000000000000958e-01 2.271750000000000436e-01 2.105000000000000482e-01 2.139000000000000623e-01 2.165250000000000230e-01 2.153000000000001302e-01 2.181250000000000688e-01 2.162750000000000783e-01 2.123000000000000720e-01 1.990000000000000657e-01 2.112750000000001849e-01 2.022750000000000659e-01 2.173250000000000459e-01 1.942250000000000920e-01 1.981500000000000483e-01 1.941500000000000725e-01 1.911000000000000476e-01 1.862000000000000044e-01 1.985500000000000598e-01 1.920000000000000595e-01 1.908500000000000751e-01 1.826000000000000123e-01 1.933250000000000801e-01 1.849750000000000560e-01 1.979250000000000731e-01 2.115250000000001296e-01 1.782749999999999335e-01 1.733750000000000291e-01 1.852000000000000313e-01 1.698750000000000537e-01)
+length range
+length(range)
+data
+data = read.table('trainingValidTest.txt')#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,1), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset with LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+data = read.table('trainingValidTest.txt')#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,1), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset with LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+data
+data = read.table('trainingValidTest.txt')#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,1), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset with LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+data
+data = read.table('trainingValidTest.txt')#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,100), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset with LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+data = read.table('trainingValidTest.txt')#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,100), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset with LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+data = read.table('trainingValidTest.txt')#
+data = data*10#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,100), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset with LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+data = read.table('trainingValidTest.txt')#
+data = data*10#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,100), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset without LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
+data = read.table('trainingValidTest.txt')#
+data = data*10#
+#
+range = c(1:200)#
+#
+plot(range, data[1,], type='l', col="red", ylim=c(0,100), ann=FALSE)#
+lines(range, data[2,], col="green")#
+lines(range, data[3,], col="black")#
+title('Training, validation and test error for a CIFAR dataset with LCN', xlab='Epochs', ylab='Error(in %)')#
+name_errors = c('Training error', 'Validation error', 'Test error')#
+#
+legend('topright', name_errors, cex=0.8, col=c('red','green','black'), lty=1);
