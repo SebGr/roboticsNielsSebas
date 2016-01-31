@@ -1,6 +1,6 @@
 %!TEX root = report.tex
 
-A base convolutional neural network is used as a basis. The activation functions are replaced by Rectified Linear Units. Furthermore is a local cost normalization added after the convolution layer and before the max pooling function. 
+A convolutional neural network is used as a basis. The activation functions are replaced by Rectified Linear Units. Furthermore is local cost normalization added after the convolution layer and before the max pooling function. 
 
 \begin{table}[ht!]
 \centering
@@ -12,7 +12,7 @@ L2 regularization   & 0.0001 \\
 Batch Size          & 500     \\
 Max epochs          & 200   \\   
 \end{tabular}
-\caption{The parameters used for the Neural Network}
+\caption{The parameters used for the neural network}
 \label{parameters2}
 \end{table}
 
@@ -40,6 +40,8 @@ The same values as for the base convolutional neural network. These can be seen 
 The results can be seen in Table \ref{results2}. The neural network took 52.03 minutes to learn. Since there are 10 classes, the chance for a random correct classification is 10\%, which would mean the test error would be around 90\%. As can be seen in Table \ref{results2}, the resulting test error was 1.58, which is a lot below what the random test error is. 
 
 The Figure \ref{fig:2:learningKernels} shows the 70 kernels. Of which the first 20 kernels show the first layer of the convolutional layer, and the second shows the first 50 for the second layer. The first layer shows clear local contrast, due to the clear borders between the dark and light colours in the graphs.
+
+\todo[inline]{LCN uitleggen}
 
 % best val score 1.58\% at iteration 4900(out of 10000 or 100 epochs), test performance 1.58\%. Took 52.03 minutes.
 % Beginning val error was 18.14 and test was 18.68.
