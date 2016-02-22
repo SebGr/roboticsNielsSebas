@@ -7,14 +7,14 @@ We created our own behavior called \t{movetolocation}, in which the program rece
 	label={code:3}, 
 	language=python,
 	firstline=28,
-	lastline=48
+	lastline=52
 ]{./src/movetolocation_0.py}
 
 The response is formulated in \cref{code:3}, where the class NLP is also called. The optionals as well as any potential names are first removed in order to reduce the complexity of the message that has to be parsed. 
 
 Afterwards the sentence is checked if there are tokens like \t{<verb>} or \t{<location>} present. If they aren't, then an if sentence == x, reply y system is used. If there are tokens present, then the sentence gets split in the respective words. 
 
-If a verb is found from the dictionary, then the location is retrieved and the robot responses that he will move to the location. If it can't find a verb from the dictionary, then from the list of sentences it should be able to respond to, there is only one option left, a request to reach the dining table. Then that is the final response.
+If a verb is found from the dictionary, then the location is retrieved and the robot responses that he will move to the location. If it can't find a verb from the dictionary, then from the list of sentences it should be able to respond to, then it checks whether it is a request to reach the dining table. If that also isn't the case, then is the final response is reached, which is if the question could be repeated again.
 
 \lstinputlisting[
 	caption={The grammar used},

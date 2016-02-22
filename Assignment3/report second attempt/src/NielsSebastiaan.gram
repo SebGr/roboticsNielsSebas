@@ -8,7 +8,7 @@ public <all> = ( <command> | <question> | <request>);
 
 <verb> = (go | navigate | move)
 
-<start> = (alice|Alice);
+<start> = alice;
 
 <question> = [<start>] <sentence>;
 

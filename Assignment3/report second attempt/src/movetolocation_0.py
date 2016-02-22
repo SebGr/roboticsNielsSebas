@@ -28,12 +28,13 @@ class MoveToLocation_x(basebehavior.behaviorimplementation.BehaviorImplementatio
     def formulate_response(self,question):
         grammar = JSGFParser('speech/hark-sphinx/grammar/NielsSebastiaan.gram')
         language_parsing = nlp()
-        question = language_parsing.remove_name(language_parsing.remove_opts(question))
+        question = language_parsing.remove_name(language_parsing.remove_opts(question)).lower()
+        question = question.replace("?", "").replace(",", "")
         if(grammar.findToken(question) != None):
         #Question
             responses = {\
             'what time is it' : "The current time is: " + time.strftime("%H:%M:%S") + ".",\
-            'what is the oldest most widely used drug on earth' : 'the oldest, most widely used drug on earth is coffee.',\
+            'what is the oldest most widely used drug on earth' : 'The oldest, most widely used drug on earth is coffee.',\
             'who are your creators' : 'My creators are Niels and Sebastiaan.'}
             return responses[question]
         else:
@@ -43,9 +44,11 @@ class MoveToLocation_x(basebehavior.behaviorimplementation.BehaviorImplementatio
                 question = question.replace(words[0] + " to the ", "")
                 if(grammar.findTokenVar(question) == '<location>'):
                     return "I am moving to " + question + "."
-            else:
+            elif("dining table" in question):
                 #request
                 return "I am approaching the dining table."
+            else:
+                return "I'm sorry, I did not get that. Could you please repeat it?"
                 
 
         #try:

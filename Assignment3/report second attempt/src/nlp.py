@@ -17,6 +17,7 @@ class nlp():
 
     def remove_name(self,s):
         for name in self.names:
+            s = s.lower()
             start = "%s " % name
             if  s.startswith(start):
                 s = s.lstrip(start)

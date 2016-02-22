@@ -91,7 +91,7 @@ class JSGFParser():
                 if includeVars:
                     p = re.compile(ur'(?<=[|=(]) *([a-z_<> ]+) *(\{[a-z_]+\})? *(?=[|;)])')
                 else:
-                    p = re.compile(ur'(?<=[|=(]) *([a-z_ ]+) *(\{[a-z_]+\})? *(?=[|;)])')                    
+                    p = re.compile(ur'(?<=[|=(]) *([a-z_ ]+) *(\{[a-z_]+\})? *(?=[|;)])')
                 matches = re.findall(p, line)
                 for match in matches:
                     items.append(match[0].strip())
@@ -99,7 +99,6 @@ class JSGFParser():
                 # tokens = parts[1].split("|")
                 # for token in tokens:
                 #     items.append(token.strip().strip(";"))
-
         return items
 
 
@@ -116,7 +115,7 @@ class JSGFParser():
         return m
 
 if __name__ == '__main__':
-    parser = JSGFParser("grammar/experiment.gram")
+    parser = JSGFParser('speech/hark-sphinx/grammar/NielsSebastiaan.gram')
 
     # parser.findOptionalTokens()
     # parser.findStopwords()
