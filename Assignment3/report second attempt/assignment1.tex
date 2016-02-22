@@ -1,0 +1,17 @@
+%!TEX root = report.tex
+
+The voices were recorded with the microphone being at a distance of 0.5 meters. Sebastiaan did the first five label files, while Niels did the second five label files.
+
+Using the settings described in the assignment, we see that it generates a group of files with a duration of 1 second, with mostly noise. The aula folders generally had the best respons with parts of actual sentences, while the other rooms, like robotlab, didn't generate any files or a few.
+
+We then started playing with the variables.
+
+Increasing the track threshold caused a decreased amount of sounds to be recognized, while decreasing the track threshold caused an increased amount of sounds to be recognized. Seeing as the ideal amount of sounds that can be recognized should be about 10, we slightly increased the threshold in order to find a value closes to that the amount of sounds we wanted to find. Using a threshold of 31.5 gave us 11 source sounds, which is close.
+
+The track pause mostly influenced which parts of sentences got connected to one another. We did see a large difference between the results gotten by Sebastiaan and by Niels, where Sebastiaan fluctuated a bit in the speed of the speaking of the sentences, Niels was a more consistent. So it appears to be that the more consistent the sentences are being spoken, the better the results will be and the easier it is to get the correct sentences. There was a slight pause whenever one of us said \t{pseudo} or \t{Alice}, so we fluctuated the track pause to address that issue. 
+
+Changing the separate gain did nothing for our results, increasing it up to 1.5 caused our results to stay the same.
+
+The SEVD music algorithm found the most sentences, while the other two tagged very closely behind. We did not find any real differences between using the different music algorithms
+
+We found the settings track threshold 31.5, track pause 600 with SEVD to find decent results with 11 soruces. The sentences from Niels gave better results, we believe that was due to him taking bigger pauses between sentences.

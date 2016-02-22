@@ -1,0 +1,18 @@
+%!TEX root = report.tex
+
+The sweep has been done for the variables \t{pause}(low 600, high 1000), which determines the milliseconds of silence the recognizer should take between sentences, \t{gain}(low 0.5, high 1.5), which seemed to control the volume of the mixes, and \t{threshold}(low 27, high 33) which determines at which volume sentences start being recognized. We found that the following settings gave the highest percentages:
+
+\begin{table}[]
+\centering
+\caption{The ideal settings for our scores}
+\label{my-label}
+\begin{tabular}{l|l}
+Pause     & 1000 \\
+Gain      & 1    \\
+Threshold & 27  
+\end{tabular}
+\end{table}
+
+Calculating the mean of the scores, we found that using high pause with a low threshold gave the best results, with an average percentage of 54.5$\%$. The default settings were around 32$\%$, as most of the other settings. A high threshold showed a sharp decrease in the percentages, up to 4.5$\%$ The full results of the parameter experiments can be found in the Appendix. In many of the score sets, the first five scores in a line are very low, while scores six to ten are much higher. This is because the first five files were recorded from Sebastiaan's voice and the other five files from Niels's voice, of which the latter gave better results.\\
+The score sets in listings \ref{lst:2:default} to \ref{lst:2:lowthresh} are calculated using a given grammar file, the recognizer can only recognize sentences that match this grammar. We also ran the recognizer without a grammar. This drastically increases the amount of possible sentences, which had its effect on the running time of the recognition process. We had to run the \t{decode_all_mixes.py} file overnight to be able to get results without grammar (and the default settings), these can be seen in the Appendix in \cref{lst:2:no_grammar}. The scores in here are clearly lower than those for the default settings. So recognition is better when specifying a grammar.
+

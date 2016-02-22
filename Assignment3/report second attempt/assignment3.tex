@@ -1,0 +1,32 @@
+%!TEX root = report.tex
+
+We created our own behavior called \t{movetolocation}, in which the program received text input, for which it then had to give adequate feedback. We used the NLP class, which was meant for assignment 4, for this assignment already, in order to reduce the complexity of the sentences. This made them easier to parse, meaning less text had to be hard-coded.
+
+\lstinputlisting[
+	caption={The formulation of the response.},
+	label={code:3}, 
+	language=python,
+	firstline=28,
+	lastline=48
+]{./src/movetolocation_0.py}
+
+The response is formulated in \cref{code:3}, where the class NLP is also called. The optionals as well as any potential names are first removed in order to reduce the complexity of the message that has to be parsed. 
+
+Afterwards the sentence is checked if there are tokens like \t{<verb>} or \t{<location>} present. If they aren't, then an if sentence == x, reply y system is used. If there are tokens present, then the sentence gets split in the respective words. 
+
+If a verb is found from the dictionary, then the location is retrieved and the robot responses that he will move to the location. If it can't find a verb from the dictionary, then from the list of sentences it should be able to respond to, there is only one option left, a request to reach the dining table. Then that is the final response.
+
+\lstinputlisting[
+	caption={The grammar used},
+	label={grammar}, 
+	language=XML,
+]{./src/NielsSebastiaan.gram}
+
+The grammar used can be seen in \cref{grammar}. To make the grammar easily usable for the NLP class, have we named the verbs \t{<verb>} and names with \t{<start}. The sentences are hardcoded due to their lack of overlap with the other sentences that the program had to be able to respond to.
+
+Launch instructions:
+\begin{lstlisting}
+$ roscore
+$ ./start.sh config/assignment3
+$ python speech/speech_to_memory.py "hyp1"
+\end{lstlisting}
