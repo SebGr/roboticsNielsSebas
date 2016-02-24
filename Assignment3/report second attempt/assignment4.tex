@@ -1,3 +1,48 @@
 %!TEX root = report.tex
+To be able to deal with uncertainty, we modified the behavior used in exercise 3. We replaced the \t{formulate_response} function by a similar response generation from the NLP class that is able to deal with uncertainty. We modified the original NLP class to one that is able to deal with our grammar.
+The first thing that happens in our NLP class is checking if there are elements in a hypothesis that correspond to our grammar. It does this for the two best hypotheses separately. The NLP uses some symbols directly from the grammar for parsing, like \t{<start>}, \t{<verb>}, \t{<location>} and \t{<sentence>}. Using these symbols, the class is able to determine whether an hypothesis is a question, an order to navigate or not anything corresponding to the grammar at all. The main elements, like what verb was used, what location was mentioned and what exact question was asked is returned and compared to that of the other hypothesis.
+If both hypotheses are equal, an appropriate response is given like in exercise 3:
 
-Due to time constraints, we unfortunately were not able to do this assignment.
+\begin{lstlisting}[language=bash]
+I heard one of these:
+what is the oldest most widely used drug on earth
+alice what is the oldest most widely used drug on earth
+
+[Alice says] Okay, The oldest, most widely used drug on earth is coffee.
+\end{lstlisting}
+
+If hypotheses are unequal the inequality is explored. For example, in a case where both are navigation commands, but there is a difference in locations, the class asks the user to repeat the desired destination:
+
+\begin{lstlisting}[language=bash]
+I heard one of these:
+alice navigate to the living room
+go to the kitchen
+
+living room
+kitchen
+[Alice says] Where did you want me to navigate?
+> kitchen
+[Alice says] Okay, I will go to the kitchen
+\end{lstlisting}
+
+When there are two unequal questions the system asks the user to repeat the question:
+
+\begin{lstlisting}[language=bash]
+[Alice says] Okay, The oldest, most widely used drug on earth is coffee.
+I heard one of these:
+alice what time is it
+alice who are your creators
+
+[Alice says] could you repeat your question?
+> what time is it
+[Alice says] Okay, The current time is: 18:09:29.
+\end{lstlisting}
+
+We were able to test this NLP class on it's own and write code that connects this to our behavior. However due to time constraints we were not able to test this as an actual behavior on the robot lab systems.
+
+Launch instructions, assuming listing \ref{lst:4:behavior} is used as behavior:
+\begin{lstlisting}
+$ roscore
+$ ./start.sh config/assignment3
+$ python speech/speech_to_memory.py "hyp1" ["hyp2"]
+\end{lstlisting}
